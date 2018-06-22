@@ -60,14 +60,14 @@ populate();
 function sendCult () {
   question;
   question.textContent = cultQuestions[0].question;
-  var answer1 = document.getElementById('ans1');
-  answer1.textContent = cultQuestions[0].answer1;
-  var answer2 = document.getElementById('ans2');
-  answer2.textContent = cultQuestions[0].answer2;
-  var answer3 = document.getElementById('ans3');
-  answer3.textContent = cultQuestions[0].answer3;
-  var answer4 = document.getElementById('ans4');
-  answer4.textContent = cultQuestions[0].answer4;
+  ans1;
+  ans1.textContent = cultQuestions[0].answer1;
+  ans2;
+  ans2.textContent = cultQuestions[0].answer2;
+  ans3;
+  ans3.textContent = cultQuestions[0].answer3;
+  ans4;
+  ans4.textContent = cultQuestions[0].answer4;
 }
 sendCult();
 
