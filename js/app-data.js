@@ -15,3 +15,4 @@ function addLocalStorageOfUserName(user) {
   JSON.parse(localStorageData);
 }
 
+// move to app.js
