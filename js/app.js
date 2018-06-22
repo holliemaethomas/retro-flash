@@ -1,3 +1,4 @@
+
 'use strict';
 
 //TODO1 Arrays of questions and more
@@ -41,7 +42,7 @@ function Questions(category, question, answer1, answer2, answer3, answer4, corre
 
 //TODO3 Function to send all of the questions and answers to the constructor function
 function populate() {
-  new Questions('cult', 'The Goonies search for which pirates\'s treasure?', 'Blackbeard', 'Davy Jones', 'Calico Jack', 'One Eyed-Willy', 4);
+  new Questions('cult', 'The Goonies search for which pirate\'s treasure?', 'Blackbeard', 'Davy Jones', 'Calico Jack', 'One Eyed-Willy', 4);
   new Questions('cult', 'Which 80s movie theme song was recorded in just 3 hours?', '"Oh Yeah" - Ferris Bueller\'s Day Off', '"Don\'t You (Forget About Me)" - The Breakfast Club', '"Storybook Love" - The Princess Bride', '"Ghostbusters" - Ghostbusters', 2);
   new Questions('magic', 'In the Labyrinth, what other name does the Goblin King go by (Hint: The Goblin King is played by David Bowie!)?', 'The Lord of the Labyrinth', 'Robert', 'Jareth', 'His Highness', 3);
   new Questions('magic', 'What is the name of Atreyu’s horse in The NeverEnding Story?', 'Artax', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
@@ -49,13 +50,29 @@ function populate() {
   new Questions('horror', 'How many Nightmare on Elm Street movies were made in the 80s?', 3, 4, 5, 6, 3);
   new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. The Extraterrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
-  new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswolf', 3);
+  new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
 }
 populate();
 
 //TODO4 Function to randomly pic the question, from the category selected
 
 //TODO5 Function that sends the questions to the form on the game screen
+function sendCult() {
+  question;
+  question.textContent = cultQuestions[0].question;
+  ans1;
+  ans1.textContent = cultQuestions[0].answer1;
+  ans2;
+  ans2.textContent = cultQuestions[0].answer2;
+  ans3;
+  ans3.textContent = cultQuestions[0].answer3;
+  ans4;
+  ans4.textContent = cultQuestions[0].answer4;
+}
+sendCult();
+
+
+
 
 //TODO6 Function that runs when a player answers a question
 
