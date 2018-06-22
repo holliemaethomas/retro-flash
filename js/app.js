@@ -57,7 +57,7 @@ populate();
 //TODO4 Function to randomly pic the question, from the category selected
 
 //TODO5 Function that sends the questions to the form on the game screen
-function sendCult () {
+function sendCult() {
   question;
   question.textContent = cultQuestions[0].question;
   ans1;
