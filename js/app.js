@@ -1,3 +1,4 @@
+
 'use strict';
 
 //TODO1 Arrays of questions and more
@@ -49,7 +50,7 @@ function populate() {
   new Questions('horror', 'How many Nightmare on Elm Street movies were made in the 80s?', 3, 4, 5, 6, 3);
   new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. The Extraterrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
-  new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswolf', 3);
+  new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
 }
 populate();
 
@@ -59,8 +60,14 @@ populate();
 function sendCult () {
   question;
   question.textContent = cultQuestions[0].question;
-  ans1;
-  ans1.textContent = cultQuestions[0].answer1;
+  var answer1 = document.getElementById('ans1');
+  answer1.textContent = cultQuestions[0].answer1;
+  var answer2 = document.getElementById('ans2');
+  answer2.textContent = cultQuestions[0].answer2;
+  var answer3 = document.getElementById('ans3');
+  answer3.textContent = cultQuestions[0].answer3;
+  var answer4 = document.getElementById('ans4');
+  answer4.textContent = cultQuestions[0].answer4;
 }
 sendCult();
 
