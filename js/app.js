@@ -48,12 +48,14 @@ function populate() {
   new Questions('magic', 'What is the name of Atreyu’s horse in The NeverEnding Story?', 'Artax', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
   new Questions('horror', 'Which movie is in the Guinness Book of Records for the most retakes of a single scene?', 'A Nightmare on Elm Street', 'The Shining', 'The Evil Dead', 'Poltergeist', 2);
   new Questions('horror', 'How many Nightmare on Elm Street films were made in the 80s?', 3, 4, 5, 6, 3);
-  new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. The Extraterrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
+  new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. the Extra-Terrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
   new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
   new Questions('cult', 'What song did Ducky lip sync in Pretty in Pink?', '"Try a Little Tenderness"', '"Nothing\'s Gonna Stop Us Now"', '"Saving All My Love for You"', '"Longer"', 1);
   new Questions('action', 'Name That Movie: “Snakes. Why’d it have to be snakes?”', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
   new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____?"', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
+  new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
+  new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune.', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
   new Questions();
 }
 populate();
