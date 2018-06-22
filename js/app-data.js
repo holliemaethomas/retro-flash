@@ -1,16 +1,17 @@
+
 'use strict';
-var userName = document.getElementById('username');
+function formSubmit(){
+  var userName = document.getElementById('username').value;
+  console.log(userName);
+  addLocalStorageOfUserName(userName);
+  var remove = document.getElementById('login');
+  remove.parentNode.removeChild(remove);
+}
 
-
-
-function addLocalStorageOfUserName() {
-  var localStorageData = JSON.stringify(name);
+function addLocalStorageOfUserName(user) {
+  var localStorageData = JSON.stringify(user);
   localStorage.setItem('userName', localStorageData);
   localStorage.getItem('userName', localStorageData);
   JSON.parse(localStorageData);
 }
-addLocalStorageOfUserName();
 
-function userNameSubmit(event){
-  console.log(userName); 
-}
