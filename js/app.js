@@ -51,6 +51,7 @@ function populate() {
   new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. The Extraterrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
   new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
+
 }
 populate();
 
