@@ -91,28 +91,68 @@ function sendQuestion() {
   ans4.textContent = newQuestion.answer4;
 }
 
-//TODO6 Function that runs when a player answers a question
+//Function that checks for the correct answer and adds the points
+function pickAnswer(event) {
+  event.preventDefault();
+  target = event.target.id;
+  console.log(target);
+  console.log(newQuestion.correctAns);
+  if('ans' + newQuestion.correctAns === target) {
+    totalPoints += 50;
+    console.log(totalPoints);
+    //TODO17 Need correct indication for user
+  } else {
+    //TODO18 Need incorrect indication for user
+  }
+  checkTen();
+}
 
-//TODO7 Function that checks for the correct answer and adds the points
-
-//TODO8 Function that runs when the user has answered ten questions, display scoreboard
-
+//Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
   if (questionsTotal === 10) {
-    var remove = document.getElementById('populate-question');
-    remove.textContent = '';
-    //Need to insert the function for the Leader board
+    //TODO19 Set up delay and then display score board
   } else {
     questionsTotal ++;
   }
 }
 
-//TODO9 Function to check if the user is a new or returning player
+//Function to check if the user is a new or returning player
+if(!localStorage.userName) {
+  console.log('new user');
+  formSubmit();
+}
 
-//TODO10 Function to store the username when he/she submits it
-
-//TODO11 Need to make sure previous questions don't repeat themselves
+//Function that runs when a player chooses a category
+function pickCategory(event) {
+  event.preventDefault();
+  target = event.target.id; 
+  if(target === 'cult') {
+    chosenCategory = cultQuestions;
+  } else if(target === 'action') {
+    chosenCategory = actionQuestions;
+  } else if(target === 'scifi') {
+    chosenCategory = scifiQuestions;
+  } else if(target === 'horror') {
+    chosenCategory = horrorQuestions;
+  } else if(target === 'magic') {
+    chosenCategory = magicQuestions;
+  } else {
+    chosenCategory = chevyQuestions;
+  }
+  randomQuestion();
+}
 
 //TODO15 Function to handle question submissions
+function sendComments(event) {
+  console.log('comment click');
+  event.preventDefault();
+}
 
-//TODO16 Event listeners
+//Event listeners
+categories.addEventListener('click', pickCategory);
+answers.addEventListener('click', pickAnswer);
+//comments.addEventListener('enter', sendComments);
+
+//TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
+
+//TODO21 find a way to keep a question from repeating before the end of the game
