@@ -107,13 +107,10 @@ function pickAnswer(event) {
   checkTen();
 }
 
-//TODO8 Function that runs when the user has answered ten questions, display scoreboard
-
+//Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
   if (questionsTotal === 10) {
-    var remove = document.getElementById('populate-question');
-    remove.textContent = '';
-    //Need to insert the function for the Leader board
+    //TODO19 Set up delay and then display score board
   } else {
     questionsTotal ++;
   }
