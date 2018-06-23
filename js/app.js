@@ -116,12 +116,43 @@ function checkTen() {
   }
 }
 
-//TODO9 Function to check if the user is a new or returning player
+//Function to check if the user is a new or returning player
+if(!localStorage.userName) {
+  console.log('new user');
+  formSubmit();
+}
 
-//TODO10 Function to store the username when he/she submits it
-
-//TODO11 Need to make sure previous questions don't repeat themselves
+//Function that runs when a player chooses a category
+function pickCategory(event) {
+  event.preventDefault();
+  target = event.target.id; 
+  if(target === 'cult') {
+    chosenCategory = cultQuestions;
+  } else if(target === 'action') {
+    chosenCategory = actionQuestions;
+  } else if(target === 'scifi') {
+    chosenCategory = scifiQuestions;
+  } else if(target === 'horror') {
+    chosenCategory = horrorQuestions;
+  } else if(target === 'magic') {
+    chosenCategory = magicQuestions;
+  } else {
+    chosenCategory = chevyQuestions;
+  }
+  randomQuestion();
+}
 
 //TODO15 Function to handle question submissions
+function sendComments(event) {
+  console.log('comment click');
+  event.preventDefault();
+}
 
-//TODO16 Event listeners
+//Event listeners
+categories.addEventListener('click', pickCategory);
+answers.addEventListener('click', pickAnswer);
+//comments.addEventListener('enter', sendComments);
+
+//TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
+
+//TODO21 find a way to keep a question from repeating before the end of the game
