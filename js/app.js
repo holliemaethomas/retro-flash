@@ -67,6 +67,30 @@ function populate() {
   new Questions('scifi', 'Whose work did NOT have an influence on Blade Runner?', 'Philip K. Dick', 'Dan O\'Bannon', 'Jean Giraud', 'Arthur C. Clarke', 4);
   new Questions('magic', 'What god does Conan the Barbarian worship?', 'Odin', 'Kull', 'Crom', 'Bhaal', 3);
   new Questions('magic', 'What was the first DVD sent out on Netflix in 1998?', 'Beetlejuice', 'The Dark Crystal', 'The NeverEnding Story', 'Gremlins', 1);
+  new Questions('chevy', 'In the 3 Amigos, What did the Dusty Bottoms play for the other amigos to dance to in the cantina?', 'Arm and Arm', 'My little buttercup', 'Dancing cheek to cheek', 'My love sweet love', 2);
+  new Questions('chevy', 'In the Christmas Vaction, Which football team hat did Clark wear?', 'Packers', 'Bears', 'Steelers', 'Chiefs', 2);
+  new Questions('chevy', 'In Funny Farm, What hat does Andy wear for most of the film?', 'Chicago Cubs', 'New York Mets', 'Boston Red Sox', 'New York Yankees', 2);
+  new Questions('chevy', 'In Caddy Shack, Ty Webb and Judge Smails original amount bet on the golf course is?', '$20k', '$40k', '$80k', '$100k', 1);
+  new Questions('action', 'In the Warriors, what were they asked to do by a rival gang?', 'Just beat it', 'Come out and play, Let\'s get down to it', 'Truth or Dare', 2);
+  new Questions('action', 'In Escape from New York, what is the only thing that snake asks for when escaping?', 'Shower', 'Water', 'Phone Call', 'A Ride', 4);
+  new Questions('In They Live, NADA is here to kick ass and?', 'Take Names', 'Take a break', 'Right Wrongs', 'Chew bubblegum', 4);
+  new Questions('action', ' In Highlander, The main villan the Kurgan says "it\'s better to?"', 'Leave a good looking corpse', 'Burn both ends of the candle out?', 'Burnout than to fade away', 'There can only be two', 3);
+  new Questions('horror', 'In Halloween, what were the kids watching on the tv before all the murder ensues?', 'War of the Worlds', 'Frankenstien', 'Dracula', 'The Thing', 4);
+  new Questions('horror', 'In Fright Night, what was in the oven?', 'Meatloaf', 'Dinner', 'Pie', 'Dessert', 2);
+  new Questions('horro', 'In Lost Boys, what was the name of the main love interest?', 'Star', 'Peony', 'Soleil', 'Moonflower', 1);
+  new Questions('horror', 'In Pet Sematary, what was the name of the demented cat that comes back to life', 'Josie', 'Kitty', 'Churches', 'Maxy', 3);
+  new Questions('scifi', 'In the Thing, what computer game did MacReady play while sitting in his cabin?', 'Tetris', 'Chess', 'Pong', 'Solitair', 2);
+  new Questions('scifi', 'In Aliens, what was the little girls name who was the only survivor at the LV-426 settlement?', 'Sarah', 'Hadley', 'Newt', 'Salammander', 3);
+  new Questions('scifi', 'In Bladerunner, what type of origame animal does Gaff make and leave outside Deckard\'s house?', 'Frog', 'Unicorn', 'Horse', 'Swan', 2);
+  new Questions('scifi', 'In the Terminator, what was the only possession that Kyle had of Sarah Connor?', 'Tapes', 'Gun', 'T-shirt', 'Poloroid', 4);
+  new Questions('cult', 'In the Goonies, what was the name of Chunks new best friend that rescued his other friends?', 'Mouth', 'Sloth', 'Sid', 'Brand', 2);
+  new Questions('cult', 'In the Princess Bride, Buttercup knew it was Westley when he said what phrase to her?', 'Where you go I go', 'As I do hope you love me', 'As you wish', 'With your permission', 3);
+  new Questions('scifi', 'How fast do you have to go to go back in time?', '66 mph', '77 mph', '88 mph', '99 mph', 3);
+  new Questions('scifi', 'In E.T. what colorful candy did Elliot leave to have ET follow him?', 'Skittles', 'Reeces', 'M&m\'s', 'Runts', 2);
+  new Questions('magic', 'In the Labyrinth, in which animal form did Jareth watch Saran?', 'Owl', 'Cat', 'Dog', 'Spider', 1);
+  new Questions('magic', 'In Willow, he was not always a powerful sorcer what was he before hand?', 'Farmer', 'Fisher', 'Baker', 'Shopkeeper', 1);
+  new Questions('magic', 'In the Nevenending Story, what was the name of Bastions Luck Dragon?', 'Troy', 'Artayu', 'Falkor', 'Jaryth', 3);
+  new Questions('magic', 'In Clash of the Titans, which titan does Perseus kill to save Andromeda?', 'Kraken', 'Uranus', 'Mars', 'Cronus', 1);
 
 }
 populate();
