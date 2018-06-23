@@ -3,7 +3,7 @@
 
 //TODO1 Arrays of questions and more
 var totalPoints = 0;
-var totalQuestions = 0;
+var questionsTotal = 0;
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -46,7 +46,7 @@ function populate() {
   new Questions('cult', 'The Goonies search for which pirate\'s treasure?', 'Blackbeard', 'Davy Jones', 'Calico Jack', 'One Eyed-Willy', 4);
   new Questions('cult', 'Which 80s movie theme song was recorded in just 3 hours?', '"Oh Yeah" - Ferris Bueller\'s Day Off', '"Don\'t You (Forget About Me)" - The Breakfast Club', '"Storybook Love" - The Princess Bride', '"Ghostbusters" - Ghostbusters', 2);
   new Questions('magic', 'In the Labyrinth, what other name does the Goblin King go by (Hint: The Goblin King is played by David Bowie!)?', 'The Lord of the Labyrinth', 'Robert', 'Jareth', 'His Highness', 3);
-  new Questions('magic', 'What is the name of Atreyu’s horse in The NeverEnding Story?', 'Artax', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
+  new Questions('magic', 'What is the name of Atreyu’s horse in The NeverEnding Story?', 'Artex', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
   new Questions('horror', 'Which movie is in the Guinness Book of Records for the most retakes of a single scene?', 'A Nightmare on Elm Street', 'The Shining', 'The Evil Dead', 'Poltergeist', 2);
   new Questions('horror', 'How many Nightmare on Elm Street films were made in the 80s?', 3, 4, 5, 6, 3);
   new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. the Extra-Terrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
@@ -90,11 +90,13 @@ sendCult();
 
 //TODO8 Function that runs when the user has answered ten questions, display scoreboard
 
-function stopGame() {
-  if (totalQuestions === 10) {
+function checkTen() {
+  if (questionsTotal === 10) {
     var remove = document.getElementById('populate-question');
     remove.textContent = '';
     //Need to insert the function for the Leader board
+  } else {
+    questionsTotal ++;
   }
 }
 
