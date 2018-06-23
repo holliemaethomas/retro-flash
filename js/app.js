@@ -3,6 +3,7 @@
 
 //TODO1 Arrays of questions and more
 var totalPoints = 0;
+var totalQuestions = 0;
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -53,11 +54,13 @@ function populate() {
   new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
   new Questions('cult', 'What song did Ducky lip sync in Pretty in Pink?', '"Try a Little Tenderness"', '"Nothing\'s Gonna Stop Us Now"', '"Saving All My Love for You"', '"Longer"', 1);
   new Questions('action', 'Name That Movie: “Snakes. Why’d it have to be snakes?”', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
-  new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____?"', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
+  new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____."', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
   new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
-  new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune.', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
+  new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune?', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
   new Questions('horror', 'Which is NOT a movie directed by John Carpenter?', 'The Fog', 'Halloween II', 'The Thing', 'Prince of Darkness', 2);
-  new Questions();
+  new Questions('scifi', 'Whose work did NOT have an influence on Blade Runner?', 'Philip K. Dick', 'Dan O\'Bannon', 'Jean Giraud', 'Arthur C. Clarke', 4);
+  new Questions('magic', 'What god does Conan the Barbarian worship?', 'Odin', 'Kull', 'Crom', 'Bhaal', 3);
+  new Questions('magic', 'What was the first DVD sent out on Netflix in 1998?', 'Beetlejuice', 'The Dark Crystal', 'The NeverEnding Story', 'Gremlins', 1);
 }
 populate();
 
@@ -87,9 +90,19 @@ sendCult();
 
 //TODO8 Function that runs when the user has answered ten questions, display scoreboard
 
+function stopGame() {
+  if (totalQuestions === 10) {
+    var remove = document.getElementById('populate-question');
+    remove.textContent = '';
+    //Need to insert the function for the Leader board
+  }
+}
+
 //TODO9 Function to check if the user is a new or returning player
 
 //TODO10 Function to store the username when he/she submits it
+
+//TODO11 Need to make sure previous questions don't repeat themselves
 
 //TODO15 Function to handle question submissions
 
