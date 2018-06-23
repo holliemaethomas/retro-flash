@@ -10,23 +10,19 @@
 </head>
 <body>
   <h1>Retro Flash</h1>
-
-<p> Welcome to Retro Flash. The ultimate 80's trivia game testing your skills in movie knowledge. Answer a series of questions ranging from either quotes, pictures or multiple choice. Can you get all of them right and become the true master of the 80's? Test your might against rigorous questions that will break the will of any man. If you have the guts to compete then the challenge awaits you. GOOD LUCK!</p>
  
 <!-- The divs are part of the functionality of the game. We are not to this point yet so they will remain empty. -->
 
-
-<form>
-  <p id="question"> Where the question goes.
+<div id="populate-question">
+  <p id="question"> Where the question goes.</p> 
     <br/>
-    <input type="radio" id="ans1" checked = "checked" /> Answer1 <br />
-    <input type="radio" id="ans2" checked = "checked" /> Answer2 <br />
-    <input type="radio" id="ans3" checked = "checked" /> Answer3 <br />
-    <input type="radio" id="ans4" checked = "checked" /> Answer4 <br />
-  </p> 
-</form>
-
-
+    <ul>
+      <li id="ans1"></li>
+      <li id="ans2"></li>
+      <li id="ans3"></li>
+      <li id="ans4"></li>
+    </ul>
+  </div>
   <script src="js/app.js"></script>
  <script src="js/app-data.js"></script>
 </body>
