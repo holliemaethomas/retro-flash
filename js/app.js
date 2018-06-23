@@ -1,7 +1,7 @@
 
 'use strict';
 
-//TODO1 Arrays of questions and more
+//Arrays of questions and more
 var totalPoints = 0;
 var questionsTotal = 0;
 var cultQuestions = [];
@@ -10,11 +10,17 @@ var scifiQuestions = [];
 var horrorQuestions = [];
 var magicQuestions = [];
 var chevyQuestions = [];
+var chosenCategory = [];
+var newQuestion = [];
+var target = 0;
 var question = document.getElementById('question');
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
 var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
+var comments = document.getElementById('comments');
+var categories = document.getElementById('categories');
+var answers = document.getElementById('answers');
 
 //TODO2 Constructor function to generate the question arrays
 function Questions(category, question, answer1, answer2, answer3, answer4, correctAns) {
@@ -64,7 +70,12 @@ function populate() {
 }
 populate();
 
-//TODO4 Function to randomly pic the question, from the category selected
+//Function to randomly pic the question, from the category selected
+function randomQuestion() {
+  var randomNumber = Math.floor(Math.random() * chosenCategory.length);
+  newQuestion = chosenCategory[randomNumber];
+  sendCult();
+}
 
 //TODO5 Function that sends the questions to the form on the game screen
 function sendCult() {
