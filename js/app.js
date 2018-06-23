@@ -74,7 +74,7 @@ populate();
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
-  sendCult();
+  sendQuestion();
 }
 
 //TODO5 Function that sends the questions to the form on the game screen
@@ -90,10 +90,6 @@ function sendQuestion() {
   ans4;
   ans4.textContent = newQuestion.answer4;
 }
-sendCult();
-
-
-
 
 //TODO6 Function that runs when a player answers a question
 
