@@ -142,6 +142,11 @@ function pickCategory(event) {
   randomQuestion();
 }
 
+function repeatCheck (){
+  var alreadyShown =[];
+  
+}
+
 //TODO15 Function to handle question submissions
 function sendComments(event) {
   console.log('comment click');
