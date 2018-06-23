@@ -91,9 +91,21 @@ function sendQuestion() {
   ans4.textContent = newQuestion.answer4;
 }
 
-//TODO6 Function that runs when a player answers a question
-
-//TODO7 Function that checks for the correct answer and adds the points
+//Function that checks for the correct answer and adds the points
+function pickAnswer(event) {
+  event.preventDefault();
+  target = event.target.id;
+  console.log(target);
+  console.log(newQuestion.correctAns);
+  if('ans' + newQuestion.correctAns === target) {
+    totalPoints += 50;
+    console.log(totalPoints);
+    //TODO17 Need correct indication for user
+  } else {
+    //TODO18 Need incorrect indication for user
+  }
+  checkTen();
+}
 
 //TODO8 Function that runs when the user has answered ten questions, display scoreboard
 
