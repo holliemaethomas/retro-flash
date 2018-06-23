@@ -71,18 +71,25 @@ function populate() {
 populate();
 
 //Function to randomly pic question, from category selected and cancel repeat question
+
+
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
-  console.log(alreadyShown);
-  for(var i in alreadyShown){
-    while(alreadyShown[i] === newQuestion) {
-      console.error('already shown');
+  noRepeats(newQuestion);
+  sendQuestion();
+  alreadyShown.push(newQuestion);
+}
+
+function noRepeats(question){
+  for (var i = 0; i < alreadyShown.length; i++){
+    if (question !== alreadyShown[i]){
+      sendQuestion();
+    } else {
+      console.error('This question has already shown. Please choose another one.');
       randomQuestion();
     }
   }
-  alreadyShown.push(newQuestion);
-  sendQuestion();
 }
 
 //TODO5 Function that sends the questions to the form on the game screen
@@ -133,7 +140,7 @@ if(!localStorage.userName) {
 //Function that runs when a player chooses a category
 function pickCategory(event) {
   event.preventDefault();
-  target = event.target.id; 
+  target = event.target.id;
   if(target === 'cult') {
     chosenCategory = cultQuestions;
   } else if(target === 'action') {
@@ -167,5 +174,3 @@ answers.addEventListener('click', pickAnswer);
 //comments.addEventListener('enter', sendComments);
 
 //TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
-
-//TODO21 find a way to keep a question from repeating before the end of the game
