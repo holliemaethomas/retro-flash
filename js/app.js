@@ -140,7 +140,8 @@ function pickAnswer(event) {
   if('ans' + newQuestion.correctAns === target) {
     totalPoints += 50;
     console.log(totalPoints);
-    //TODO17 Need correct indication for user
+
+
   } else {
     //TODO18 Need incorrect indication for user
   }
