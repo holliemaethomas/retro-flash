@@ -14,10 +14,20 @@
         <a>link to about us page</a>
         <a>link to contact us page</a>
       </nav>      
-      <form>
-        <p>Please enter any comments or idea submissions below.</p>
-        <textarea id = '' name = 'comments'></textarea>
+      <form action= "mailto:RetroFlash@protonmail.com" method="post" enctype="text/plain">
+      Name: <br>
+      <input type="text" name ="name">
+      <br>
+      <input type="text" name="mail">
+      <br>
+      Comment: 
+      <br>
+      <input type="text" name="comment" size ="300"> <br><br>
+      <input type="submit" value="send"> 
+      <input type= "reset" value="reset">
       </form>
+
+
       <script src="app.js"></script>
     </body>
 

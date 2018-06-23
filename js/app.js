@@ -113,6 +113,11 @@ function checkTen() {
 
 //TODO11 Need to make sure previous questions don't repeat themselves
 
+function repeatCheck (){
+  var alreadyShown =[];
+  
+}
+
 //TODO15 Function to handle question submissions
 
 //TODO16 Event listeners
