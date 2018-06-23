@@ -78,17 +78,17 @@ function randomQuestion() {
 }
 
 //TODO5 Function that sends the questions to the form on the game screen
-function sendCult() {
+function sendQuestion() {
   question;
-  question.textContent = cultQuestions[0].question;
+  question.textContent = newQuestion.question;
   ans1;
-  ans1.textContent = cultQuestions[0].answer1;
+  ans1.textContent = newQuestion.answer1;
   ans2;
-  ans2.textContent = cultQuestions[0].answer2;
+  ans2.textContent = newQuestion.answer2;
   ans3;
-  ans3.textContent = cultQuestions[0].answer3;
+  ans3.textContent = newQuestion.answer3;
   ans4;
-  ans4.textContent = cultQuestions[0].answer4;
+  ans4.textContent = newQuestion.answer4;
 }
 sendCult();
 
