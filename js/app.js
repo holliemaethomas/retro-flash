@@ -1,6 +1,6 @@
 
 'use strict';
-
+var alreadyShown = [];
 //Arrays of questions and more
 var totalPoints = 0;
 var questionsTotal = 0;
@@ -95,11 +95,26 @@ function populate() {
 }
 populate();
 
-//Function to randomly pic the question, from the category selected
+//Function to randomly pic question, from category selected and cancel repeat question
+
+
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
+  noRepeats(newQuestion);
   sendQuestion();
+  alreadyShown.push(newQuestion);
+}
+
+function noRepeats(question){
+  for (var i = 0; i < alreadyShown.length; i++){
+    if (question !== alreadyShown[i]){
+      sendQuestion();
+    } else {
+      console.error('This question has already shown. Please choose another one.');
+      randomQuestion();
+    }
+  }
 }
 
 //TODO5 Function that sends the questions to the form on the game screen
@@ -116,28 +131,74 @@ function sendQuestion() {
   ans4.textContent = newQuestion.answer4;
 }
 
-//TODO6 Function that runs when a player answers a question
+//Function that checks for the correct answer and adds the points
+function pickAnswer(event) {
+  event.preventDefault();
+  target = event.target.id;
+  console.log(target);
+  console.log(newQuestion.correctAns);
+  if('ans' + newQuestion.correctAns === target) {
+    totalPoints += 50;
+    console.log(totalPoints);
+    //TODO17 Need correct indication for user
+  } else {
+    //TODO18 Need incorrect indication for user
+  }
+  checkTen();
+}
 
-//TODO7 Function that checks for the correct answer and adds the points
-
-//TODO8 Function that runs when the user has answered ten questions, display scoreboard
-
+//Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
   if (questionsTotal === 10) {
-    var remove = document.getElementById('populate-question');
-    remove.textContent = '';
-    //Need to insert the function for the Leader board
+    //TODO19 Set up delay and then display score board
   } else {
     questionsTotal ++;
   }
 }
 
-//TODO9 Function to check if the user is a new or returning player
+//Function to check if the user is a new or returning player
+if(!localStorage.userName) {
+  console.log('new user');
+  formSubmit();
+}
 
-//TODO10 Function to store the username when he/she submits it
+//Function that runs when a player chooses a category
+function pickCategory(event) {
+  event.preventDefault();
+  target = event.target.id;
+  if(target === 'cult') {
+    chosenCategory = cultQuestions;
+  } else if(target === 'action') {
+    chosenCategory = actionQuestions;
+  } else if(target === 'scifi') {
+    chosenCategory = scifiQuestions;
+  } else if(target === 'horror') {
+    chosenCategory = horrorQuestions;
+  } else if(target === 'magic') {
+    chosenCategory = magicQuestions;
+  } else {
+    chosenCategory = chevyQuestions;
+  }
+  randomQuestion();
+}
 
-//TODO11 Need to make sure previous questions don't repeat themselves
+function repeatCheck (){
+  var alreadyShown = [];
+
+}
 
 //TODO15 Function to handle question submissions
+function sendComments(event) {
+  console.log('comment click');
+  event.preventDefault();
+}
 
-// TODO16 Event listeners
+//Event listeners
+categories.addEventListener('click', pickCategory);
+answers.addEventListener('click', pickAnswer);
+//comments.addEventListener('enter', sendComments);
+
+
+
+//TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
+

@@ -7,17 +7,28 @@
     </head>
 
     <body>
-      <nav>
-        <img>
-        <h1>Retro Flash</h1>
-        <a>link to home page</a>
-        <a>link to about us page</a>
-        <a>link to contact us page</a>
-      </nav>      
-      <form>
-        <p>Please enter any comments or idea submissions below.</p>
-        <textarea id = '' name = 'comments'></textarea>
-      </form>
+     <div id=emailForm>
+       <form action= "mailto:RetroFlash@protonmail.com" method="post" enctype="text/plain">
+       Name: <br>
+       <input id="nameInput" type="text" name ="name">
+       <br>
+       Email address:
+       <input id="emailInput" type="text" name="mail">
+       <br>
+       Submit your question: 
+       <br>
+       <input id="commentInput" type="text" name="comment"> <br><br>
+       <input type="submit" value="send"> 
+       <input type= "reset" value="reset">
+       </form>
+     </div>     
+     <div id="rickRoll">
+        <video preload="auto" autoplay loop muted="muted" volume="0">
+          <source src="videos/splash4.mp4" type="video/mp4">
+        </video>
+     </div>
+
+
       <script src="app.js"></script>
     </body>
 
