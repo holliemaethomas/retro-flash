@@ -1,6 +1,6 @@
 
 'use strict';
-
+var alreadyShown = [];
 //Arrays of questions and more
 var totalPoints = 0;
 var questionsTotal = 0;
@@ -70,10 +70,18 @@ function populate() {
 }
 populate();
 
-//Function to randomly pic the question, from the category selected
+//Function to randomly pic question, from category selected and cancel repeat question
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
+  console.log(alreadyShown);
+  for(var i in alreadyShown){
+    while(alreadyShown[i] === newQuestion) {
+      console.error('already shown');
+      randomQuestion();
+    }
+  }
+  alreadyShown.push(newQuestion);
   sendQuestion();
 }
 
@@ -143,8 +151,8 @@ function pickCategory(event) {
 }
 
 function repeatCheck (){
-  var alreadyShown =[];
-  
+  var alreadyShown = [];
+
 }
 
 //TODO15 Function to handle question submissions
