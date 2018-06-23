@@ -65,7 +65,7 @@ function populate() {
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
   new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in National Lampoon?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
   new Questions('cult', 'What song did Ducky lip sync in Pretty in Pink?', '"Try a Little Tenderness"', '"Nothing\'s Gonna Stop Us Now"', '"Saving All My Love for You"', '"Longer"', 1);
-  new Questions('action', 'Name That Movie: “Snakes. Why’d it have to be snakes?”', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
+  new Questions('action', 'Name That Movie: Snakes. Why did it have to be snakes?', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
   new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____."', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
   new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
   new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune?', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
@@ -77,7 +77,7 @@ function populate() {
   new Questions('chevy', 'In the Christmas Vaction, Which football team hat did Clark wear?', 'Packers', 'Bears', 'Steelers', 'Chiefs', 2);
   new Questions('chevy', 'In Funny Farm, What hat does Andy wear for most of the film?', 'Chicago Cubs', 'New York Mets', 'Boston Red Sox', 'New York Yankees', 2);
   new Questions('chevy', 'In Caddy Shack, Ty Webb and Judge Smails original amount bet on the golf course is?', '$20k', '$40k', '$80k', '$100k', 1);
-  new Questions('action', 'In the Warriors, what were they asked to do by a rival gang?', 'Just beat it', 'Come out and play, Let\'s get down to it', 'Truth or Dare', 2);
+  new Questions('action', 'In the Warriors, what were they asked to do by a rival gang?', 'Just beat it', 'Come out and play', 'Let\'s get down to it', 'Truth or Dare', 2);
   new Questions('action', 'In Escape from New York, what is the only thing that snake asks for when escaping?', 'Shower', 'Water', 'Phone Call', 'A Ride', 4);
   new Questions('action', 'In They Live, NADA is here to kick ass and?', 'Take Names', 'Take a break', 'Right Wrongs', 'Chew bubblegum', 4);
   new Questions('action', ' In Highlander, The main villan the Kurgan says "it\'s better to?"', 'Leave a good looking corpse', 'Burn both ends of the candle out?', 'Burnout than to fade away', 'There can only be two', 3);
@@ -97,12 +97,10 @@ function populate() {
   new Questions('magic', 'In Willow, he was not always a powerful sorcer what was he before hand?', 'Farmer', 'Fisher', 'Baker', 'Shopkeeper', 1);
   new Questions('magic', 'In the Nevenending Story, what was the name of Bastions Luck Dragon?', 'Troy', 'Artayu', 'Falkor', 'Jaryth', 3);
   new Questions('magic', 'In Clash of the Titans, which titan does Perseus kill to save Andromeda?', 'Kraken', 'Uranus', 'Mars', 'Cronus', 1);
-
 }
 populate();
 
 //Function to randomly pic question, from category selected and cancel repeat question
-
 
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
@@ -155,12 +153,14 @@ function pickAnswer(event) {
 
 //Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
-  if (questionsTotal === 10) {
-    var remove = document.getElementById('populate-question');
-    remove.textContent = '';
+  if (questionsTotal === 9) {
+    document.getElementById('question').hidden = true;
+    document.getElementById('answers').hidden = true;
+    document.getElementById('categories').hidden = true;
     //Need to insert the function for the Leader board
   } else {
-    questionsTotal++;
+    questionsTotal = questionsTotal + 1;
+    console.log(questionsTotal);
   }
 }
 
