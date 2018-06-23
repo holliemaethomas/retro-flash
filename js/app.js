@@ -144,8 +144,12 @@ function pickAnswer(event) {
   if('ans' + newQuestion.correctAns === target) {
     totalPoints += 50;
     console.log(totalPoints);
+    var correctAns = document.getElementById('question');
+    correctAns.textContent = 'CORRECT!';
+    document.getElementById('answers').hidden = true;
     //TODO17 Need correct indication for user
   } else {
+    answers.removeEventListener('click', pickAnswer);
     //TODO18 Need incorrect indication for user
   }
   checkTen();
@@ -173,6 +177,7 @@ if(!localStorage.userName) {
 //Function that runs when a player chooses a category
 function pickCategory(event) {
   event.preventDefault();
+  answers.addEventListener('click', pickAnswer);
   target = event.target.id;
   if(target === 'cult') {
     chosenCategory = cultQuestions;
