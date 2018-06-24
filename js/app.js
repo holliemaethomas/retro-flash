@@ -1,7 +1,8 @@
 
 'use strict';
-var alreadyShown = [];
+
 //Arrays of questions and more
+var alreadyShown = [];
 var totalPoints = 0;
 var questionsTotal = 0;
 var cultQuestions = [];
@@ -98,6 +99,10 @@ function populate() {
   new Questions('horror', 'What was the first movie to win an Academy Award for Best Makeup?', 'An American Werewolf in London', 'The Evil Dead', 'Halloween II', 'Friday the 13th', 1);
   new Questions('horror', 'What movie did Andy Warhol call, "A Clockwork Orange of the 1980s?"', 'A Nightmare on Elm Street', 'Re-Animator', 'Christine', 'Videodrome', 4);
   new Questions('horror', 'Who did Steven Spielberg initially ask to write the Poltergeist script?', 'John Carpenter', 'Tobe Hooper', 'Stephen King', 'Dario Argento', 3);
+  new Questions('cult', 'How many times was the name "Heather" said during the movie Heathers?', '70', '80', '90', '100', 3);
+  new Questions('cult', 'David Lynch\'s Blue Velvet contains subtle references to which historical figure\'s assassination?', 'John F. Kennedy', 'Abraham Lincoln', 'Archduke Franz Ferdinand', 'Martin Luther King Jr.', 2);
+  new Questions('cult', 'In the original script of Bill & Ted\'s Excellent Adventure, the time machine was a _____?', 'Treadmill', 'Van', 'Closet', 'Hot Tub', 2);
+  new Questions('cult', 'Which movie on IMDB is rated out of 11 instead of 10?', 'Ghostbusters', 'RoboCop', 'Scarface', 'This is Spinal Tap', 4);
 }
 populate();
 
@@ -198,8 +203,6 @@ function pickCategory(event) {
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
 //comments.addEventListener('enter', sendComments);
-
-//TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
 
 // function to create local storage
 function addLocalStorageOfUserScore(totalPoints) {
