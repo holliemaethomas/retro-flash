@@ -17,7 +17,7 @@ body {
 #login {
   width: 320px;
   height: 420px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   color: #fff;
   top: 50%;
   left: 50%;
@@ -46,7 +46,7 @@ body {
   margin-bottom: 20px;
 }
 
-#game-page {
+.background-blue {
   background-image: url("https://static1.squarespace.com/static/57e75145e6f2e191cbe82f42/t/5b2f08ad6d2a73177a9e42de/1529809071236/background-image-01.jpg");
   height: 100%;
   background-position: center;
@@ -69,7 +69,7 @@ nav ul li a {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 nav ul li a:hover {
@@ -109,7 +109,7 @@ h1 {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   letter-spacing: .5px;
   margin-bottom: 20px;
 }
@@ -118,14 +118,13 @@ h1 {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
   text-align: center;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: .5px;
   margin-bottom: 30px;
 }
 
-#populate-question {
-  border-color: #b9dae3;
-  border-style: outset;
+#populate-question ul li {
+  margin-bottom: 10px;
 }
 
 

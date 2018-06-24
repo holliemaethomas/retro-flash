@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 <head>
   <title>Home</title>
@@ -7,51 +6,36 @@
   <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css" />
 </head>
 <body>
-<header>
-<nav>
-  <ul>
-    <img src="img/retroflash-logo-01.png" alt='Retro Flash Logo'>
-    <li>
-      <a href="index.html">Home</a>
-    </li>
-    <li>
-     <a href="game.html">Play the Game</a>
-    </li>
-    <li>
-     <a href="contact.html">Submit a Question</a>
-    </li>
-    <li>
-      <a href="about-us.html">Meet the Team</a>
-    </li>
-   </ul>
-  </nav>
-  <div id="login">
-  <h1 id=loginHeader>Ready Player One?</h1>
-  <form onsubmit="formSubmit()">
-<p>Enter if you dare!</p>
-<input id="username" type="text" name="username" placeholder="Enter Username" value=""> 
-<button id="submit">submit</button>
-  </form>
-    
+  <header>
+    <nav>
+      <a href="index.html"><img src="img/retroflash-logo-01.png" alt='Retro Flash Logo'></a>
+      <ul class="nav-center">
+        <li>
+          <a href="game.html">Play the Game</a>
+        </li>
+        <li>
+          <a href="contact.html">Submit a Question</a>
+        </li>
+        <li>
+          <a href="about-us.html">Meet the Team</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="login">
+    <h1 id=loginHeader>Ready Player One?</h1>
+    <form onsubmit="formSubmit()">
+      <p>Enter if you dare!</p>
+      <input id="username" type="text" name="username" placeholder="Enter Username" value=""> 
+      <button id="submit">submit</button>
+    </form>
   </div>
-
- </header>
-
-  <h1>RETRO FLASH</h1>
+</header>
   <h2>A game to test your prowess in 80's flicks!</h2>
-  <p>
- Its a dead man's party! We are on a mission from God to provide you with the most entertainmnet you have had in four score and seven years! so go on Sparky show us what you got. Each category is a timed event. You will have a total of 30 seconds to answer as many questions as possible before moving on to the next category. 
- While the only winning move may be to not play we hope you have fun!
-  </p>
-
+  <p>Its a dead man's party! We are on a mission from God to provide you with the most entertainmnet you have had in four score and seven years! so go on Sparky show us what you got. Each category is a timed event. You will have a total of 30 seconds to answer as many questions as possible before moving on to the next category. While the only winning move may be to not play we hope you have fun!</p>
   <form action = 'game.html'>
     <input type ="submit" value="Click here to play" />
   </form>  
-  
- 
-  
   <script src="js/app-data.js"></script>
-    <script src="js/app.js"></script>
-
+  <script src="js/app.js"></script>
 </body>
 </html>
