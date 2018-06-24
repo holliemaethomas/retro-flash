@@ -18,7 +18,6 @@ var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
 var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
-var comments = document.getElementById('comments');
 var categories = document.getElementById('categories');
 var answers = document.getElementById('answers');
 console.log(cultQuestions);
@@ -50,7 +49,6 @@ function Questions(category, question, answer1, answer2, answer3, answer4, corre
   } else {
     chevyQuestions.push(this);
   }
-  //console.log(this);
 }
 
 //TODO3 Function to send all of the questions and answers to the constructor function
@@ -100,6 +98,11 @@ function populate() {
 }
 populate();
 
+// function clearAnswers() {
+//   document.getElementById('answers').hidden = true;
+// }
+// clearAnswers();
+
 //Function to randomly pic question, from category selected and cancel repeat question
 
 function randomQuestion() {
@@ -144,9 +147,9 @@ function pickAnswer(event) {
   if('ans' + newQuestion.correctAns === target) {
     totalPoints += 50;
     console.log(totalPoints);
-    var correctAns = document.getElementById('question');
-    correctAns.textContent = 'CORRECT!';
-    document.getElementById('answers').hidden = true;
+    // var correctAns = document.getElementById('question');
+    // correctAns.textContent = 'CORRECT!';
+    // document.getElementById('answers').hidden = true;
     //TODO17 Need correct indication for user
   } else {
     answers.removeEventListener('click', pickAnswer);
@@ -163,7 +166,7 @@ function checkTen() {
     document.getElementById('categories').hidden = true;
     //Need to insert the function for the Leader board
   } else {
-    questionsTotal = questionsTotal + 1;
+    questionsTotal++;
     console.log(questionsTotal);
   }
 }
