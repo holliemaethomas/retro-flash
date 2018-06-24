@@ -146,16 +146,20 @@ function pickAnswer(event) {
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
-    answers.removeEventListener('click', pickAnswer);
+    // answers.removeEventListener('click', pickAnswer);
     totalPoints += 50;
     localStorage.setItem('totalPoints', totalPoints);
-    console.log(totalPoints);
+    console.log(totalPoints, target);
+    alert('CORRECT');
+    randomQuestion();
     // var correctAns = document.getElementById('question');
     // correctAns.textContent = 'CORRECT!';
     // document.getElementById('answers').hidden = true;
-    //TODO17 Need correct indication for user
+    
+    
   } else {
     answers.removeEventListener('click', pickAnswer);
+  
     //TODO18 Need incorrect indication for user
   }
   checkTen();
