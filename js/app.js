@@ -63,7 +63,7 @@ function populate() {
   new Questions('scifi', 'This is the only actor to be killed by an Alien, Predator, and a Terminator.', 'Sigourney Weaver', 'Carl Weathers', 'Lance Henriksen', 'Bill Paxton', 4);
   new Questions('chevy', 'What nickname did Chevy Chase\'s wife call him in the National Lampoon movies?', 'Buddy', 'Clark', 'Sparky', 'Mr. Griswold', 3);
   new Questions('cult', 'What song did Ducky lip sync in Pretty in Pink?', '"Try a Little Tenderness"', '"Nothing\'s Gonna Stop Us Now"', '"Saving All My Love for You"', '"Longer"', 1);
-  new Questions('action', 'Name that movie: "Snakes. Why did it have to be snakes?"', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
+  new Questions('action', 'Name That Movie: "Snakes. Why did it have to be snakes?"', 'Indiana Jones and the Template of Doom', 'Crocodile Dundee', 'The Princess Bride', 'Raiders of the Lost Ark', 4);
   new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____."', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
   new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
   new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune?', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
@@ -77,7 +77,7 @@ function populate() {
   new Questions('action', 'In The Warriors, what famous line does Luther screech?', 'Just beat it', 'Come out to play', 'Let\'s get down to it', 'Truth or dare', 2);
   new Questions('action', 'In Escape from New York, what is the only thing that Snake asks for when escaping?', 'A Shower', 'Water', 'A Phone Call', 'A Ride', 4);
   new Questions('action', 'In They Live, Nada is here to, "Kick Ass and _____?"', 'Take Names', 'Take a Break', 'Right Wrongs', 'Chew Bubblegum', 4);
-  new Questions('action', ' In Highlander, the main villain - the Kurgan - says "it\'s better to _____?"', 'be alone', 'burn the candle at both ends', 'burn out than to fade away', 'be feared than loved', 3);
+  new Questions('action', 'In Highlander, the main villain - the Kurgan - says "it\'s better to _____."', 'be alone', 'burn the candle at both ends', 'burn out than to fade away', 'be feared than loved', 3);
   new Questions('horror', 'In Halloween, what were the teens watching on tv before Michael Myers arrives?', 'War of the Worlds', 'Frankenstein', 'Dracula', 'The Thing from Another World', 4);
   new Questions('horror', 'In The Lost Boys, what was the name of the main love interest?', 'Star', 'Peony', 'Soleil', 'Moonflower', 1);
   new Questions('horror', 'In Pet Sematary, what was the name of the evil cat that comes back to life?', 'Josie', 'Kitty', 'Churches', 'Maxy', 3);
@@ -93,15 +93,13 @@ function populate() {
   new Questions('magic', 'In Willow, the main character was not always a powerful sorcerer; what was he beforehand?', 'Farmer', 'Fisher', 'Baker', 'Shopkeeper', 1);
   new Questions('magic', 'In The NeverEnding Story, what was the name of Bastion\'s luckdragon?', 'Troy', 'Artayu', 'Falkor', 'Jaryth', 3);
   new Questions('magic', 'In Clash of the Titans, which titan does Perseus kill to save Andromeda?', 'Kraken', 'Uranus', 'Mars', 'Cronus', 1);
+  new Questions('action', 'Bruce Willis was paid an "unheard of" sum of money to star in Die Hard. How much was it?', '$3 Million', '$4 Million', '$5 Million', '$6 Million', 3);
+  new Questions('action', 'Name That Movie: "Son, your ego is writing checks your body can\'t cash!"', 'Lethal Weapon', 'Top Gun', 'Bloodsport', 'Beverly Hills Cop', 2);
+  new Questions('horror', 'What was the first movie to win an Academy Award for Best Makeup?', 'An American Werewolf in London', 'The Evil Dead', 'Halloween II', 'Friday the 13th', 1);
+  new Questions('horror', 'What movie did Andy Warhol call, "A Clockwork Orange of the 1980s?"', 'A Nightmare on Elm Street', 'Re-Animator', 'Christine', 'Videodrome', 4);
+  new Questions('horror', 'Who did Steven Spielberg initially ask to write the Poltergeist script?', 'John Carpenter', 'Tobe Hooper', 'Stephen King', 'Dario Argento', 3);
 }
 populate();
-
-// function clearAnswers() {
-//   document.getElementById('answers').hidden = true;
-// }
-// clearAnswers();
-
-//Function to randomly pic question, from category selected and cancel repeat question
 
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
@@ -202,8 +200,6 @@ answers.addEventListener('click', pickAnswer);
 //comments.addEventListener('enter', sendComments);
 
 //TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
-
-
 
 // function to create local storage
 function addLocalStorageOfUserScore(totalPoints) {
