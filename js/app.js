@@ -158,7 +158,8 @@ function pickAnswer(event) {
     
     
   } else {
-    answers.removeEventListener('click', pickAnswer);
+    
+    // answers.removeEventListener('click', pickAnswer);
   
     //TODO18 Need incorrect indication for user
   }
