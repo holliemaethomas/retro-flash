@@ -1,9 +1,8 @@
-
 'use strict';
-var alreadyShown = [];
+
+
 //Arrays of questions and more
-var totalPoints = 0;
-var questionsTotal = 0;
+var alreadyShown = [];
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -12,6 +11,8 @@ var magicQuestions = [];
 var chevyQuestions = [];
 var chosenCategory = [];
 var newQuestion = [];
+var totalPoints = 0;
+var questionsTotal = 0;
 var target = 0;
 var question = document.getElementById('question');
 var ans1 = document.getElementById('ans1');
@@ -27,7 +28,7 @@ console.log(horrorQuestions);
 console.log(magicQuestions);
 console.log(chevyQuestions);
 
-//TODO2 Constructor function to generate the question arrays
+//Constructor function to generate the question arrays
 function Questions(category, question, answer1, answer2, answer3, answer4, correctAns) {
   this.category = category;
   this.question = question;
@@ -51,12 +52,12 @@ function Questions(category, question, answer1, answer2, answer3, answer4, corre
   }
 }
 
-//TODO3 Function to send all of the questions and answers to the constructor function
+//Function to send all of the questions and answers to the constructor function
 function populate() {
   new Questions('cult', 'The Goonies search for which pirate\'s treasure?', 'Blackbeard', 'Davy Jones', 'Calico Jack', 'One Eyed-Willy', 4);
   new Questions('cult', 'Which 80s movie theme song was recorded in just 3 hours?', '"Oh Yeah" - Ferris Bueller\'s Day Off', '"Don\'t You (Forget About Me)" - The Breakfast Club', '"Storybook Love" - The Princess Bride', '"Ghostbusters" - Ghostbusters', 2);
   new Questions('magic', 'In the Labyrinth, what other name does the Goblin King go by (Hint: The Goblin King is played by David Bowie!)?', 'The Lord of the Labyrinth', 'Robert', 'Jareth', 'His Highness', 3);
-  new Questions('magic', 'What is the name of Atreyu’s horse in The NeverEnding Story?', 'Artex', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
+  new Questions('magic', 'What is the name of Atreyu\'s horse in The NeverEnding Story?', 'Artex', 'Teeny Weeny', 'Bastian', 'Urgl', 1);
   new Questions('horror', 'Which movie is in the Guinness Book of Records for the most retakes of a single scene?', 'A Nightmare on Elm Street', 'The Shining', 'The Evil Dead', 'Poltergeist', 2);
   new Questions('horror', 'How many Nightmare on Elm Street films were made in the 80s?', 3, 4, 5, 6, 3);
   new Questions('scifi', 'Which 80s movie was the highest grossing film of the decade?', 'E.T. the Extra-Terrestrial', 'Return of the Jedi', 'Tron', 'Aliens', 1);
@@ -77,7 +78,7 @@ function populate() {
   new Questions('chevy', 'In Caddy Shack, Ty Webb and Judge Smails original amount bet on the golf course is?', '$20k', '$40k', '$80k', '$100k', 1);
   new Questions('action', 'In the Warriors, what were they asked to do by a rival gang?', 'Just beat it', 'Come out and play', 'Let\'s get down to it', 'Truth or Dare', 2);
   new Questions('action', 'In Escape from New York, what is the only thing that snake asks for when escaping?', 'Shower', 'Water', 'Phone Call', 'A Ride', 4);
-  new Questions('action', 'In They Live, NADA is here to kick ass and?', 'Take Names', 'Take a break', 'Right Wrongs', 'Chew bubblegum', 4);
+  new Questions('action', 'In They Live, Nada is here to kick ass and?', 'Take Names', 'Take a break', 'Right Wrongs', 'Chew bubblegum', 4);
   new Questions('action', ' In Highlander, The main villan the Kurgan says "it\'s better to?"', 'Leave a good looking corpse', 'Burn both ends of the candle out?', 'Burnout than to fade away', 'There can only be two', 3);
   new Questions('horror', 'In Halloween, what were the kids watching on the tv before all the murder ensues?', 'War of the Worlds', 'Frankenstien', 'Dracula', 'The Thing', 4);
   new Questions('horror', 'In Fright Night, what was in the oven?', 'Meatloaf', 'Dinner', 'Pie', 'Dessert', 2);
@@ -90,7 +91,7 @@ function populate() {
   new Questions('cult', 'In the Goonies, what was the name of Chunks new best friend that rescued his other friends?', 'Mouth', 'Sloth', 'Sid', 'Brand', 2);
   new Questions('cult', 'In the Princess Bride, Buttercup knew it was Westley when he said what phrase to her?', 'Where you go I go', 'As I do hope you love me', 'As you wish', 'With your permission', 3);
   new Questions('scifi', 'How fast do you have to go to go back in time?', '66 mph', '77 mph', '88 mph', '99 mph', 3);
-  new Questions('scifi', 'In E.T. what colorful candy did Elliot leave to have ET follow him?', 'Skittles', 'Reeces', 'M&m\'s', 'Runts', 2);
+  new Questions('scifi', 'In E.T. what colorful candy did Elliot leave to have ET follow him?', 'Skittles', 'Reeces', 'M&M\'s', 'Runts', 2);
   new Questions('magic', 'In the Labyrinth, in which animal form did Jareth watch Saran?', 'Owl', 'Cat', 'Dog', 'Spider', 1);
   new Questions('magic', 'In Willow, he was not always a powerful sorcer what was he before hand?', 'Farmer', 'Fisher', 'Baker', 'Shopkeeper', 1);
   new Questions('magic', 'In the Nevenending Story, what was the name of Bastions Luck Dragon?', 'Troy', 'Artayu', 'Falkor', 'Jaryth', 3);
@@ -104,7 +105,6 @@ populate();
 // clearAnswers();
 
 //Function to randomly pic question, from category selected and cancel repeat question
-
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
@@ -113,6 +113,7 @@ function randomQuestion() {
   alreadyShown.push(newQuestion);
 }
 
+//Function to make sure the question hasn't already been asked
 function noRepeats(question){
   for (var i = 0; i < alreadyShown.length; i++){
     if (question !== alreadyShown[i]){
@@ -124,7 +125,7 @@ function noRepeats(question){
   }
 }
 
-//TODO5 Function that sends the questions to the form on the game screen
+//Function that sends the questions to the form on the game screen
 function sendQuestion() {
   question;
   question.textContent = newQuestion.question;
@@ -164,7 +165,7 @@ function checkTen() {
     document.getElementById('question').hidden = true;
     document.getElementById('answers').hidden = true;
     document.getElementById('categories').hidden = true;
-    //Need to insert the function for the Leader board
+    //TODO19 Need to insert the function for the Leader board
   } else {
     questionsTotal++;
     console.log(questionsTotal);
@@ -198,14 +199,7 @@ function pickCategory(event) {
   randomQuestion();
 }
 
-//Event listeners
-categories.addEventListener('click', pickCategory);
-answers.addEventListener('click', pickAnswer);
-//comments.addEventListener('enter', sendComments);
-
 //TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
-
-
 
 // function to create local storage
 function addLocalStorageOfUserScore(totalPoints) {
@@ -215,4 +209,9 @@ function addLocalStorageOfUserScore(totalPoints) {
   JSON.parse(localStorageData);
 }
 addLocalStorageOfUserScore();
+
+//Event listeners
+categories.addEventListener('click', pickCategory);
+answers.addEventListener('click', pickAnswer);
+//comments.addEventListener('enter', sendComments);
 
