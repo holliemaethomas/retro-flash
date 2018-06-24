@@ -1,11 +1,16 @@
-body{
+/* body {
   color: rgb(15, 86, 148);
   background-color: bisque;
   background-position: center;
   margin: 0;
   padding: 0;
+} */
+
+body {
+  width: 100%;
 }
-#login{
+
+#login {
   width: 320px;
   height: 420px;
   background: rgba(0, 0, 0, 0.2);
@@ -18,7 +23,7 @@ body{
   padding: 70px 30px;
 }
 
-#loginHeader{
+#loginHeader {
   margin: 0;
   padding: 0, 0, 20px;
   text-align: center;
@@ -26,13 +31,27 @@ body{
   color: rgb(209, 14, 14);
 }
 
-#login-box p{
+#login-box p {
   margin: 0;
   padding: 0;
   font-weight: bold;
 }
 
-#login-box input{
+#login-box input {
   width: 100%;
   margin-bottom: 20px;
+}
+
+#game-page {
+  background-image: url("https://static1.squarespace.com/static/57e75145e6f2e191cbe82f42/t/5b2f08ad6d2a73177a9e42de/1529809071236/background-image-01.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+nav img {
+  padding: 30px;
+  float: left;
+  width: 400px;
 }
