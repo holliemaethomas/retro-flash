@@ -74,7 +74,7 @@ function populate() {
   new Questions('chevy', 'In Three Amigos!, what did the Dusty Bottoms play for the other amigos to dance to in the cantina?', 'Arm in Arm', 'My Little Buttercup', 'Cheek to Cheek', 'My Love, Sweet Love', 2);
   new Questions('chevy', 'In National Lampoon\'s Christmas Vaction, which football team\'s hat did Clark wear?', 'Green Bay Packers', 'Chicago Bears', 'Pittsburgh Steelers', 'Kansas City Chiefs', 2);
   new Questions('chevy', 'In Caddyshack, Ty Webb and Judge Smails each bet what amount in the golf match?', '$20k', '$40k', '$60k', '$80k', 1);
-  new Questions('chevy', 'In Funny Farm, What hat does Andy wear for most of the film?', 'Chicago Cubs', 'New York Mets', 'Boston Red Sox', 'New York Yankees', 2);
+  new Questions('chevy', 'In Funny Farm, what hat does Andy wear for most of the film?', 'Chicago Cubs', 'New York Mets', 'Boston Red Sox', 'New York Yankees', 2);
   new Questions('action', 'In The Warriors, what famous line does Luther screech?', 'Just beat it', 'Come out to play', 'Let\'s get down to it', 'Truth or dare', 2);
   new Questions('action', 'In Escape from New York, what is the only thing that Snake asks for when escaping?', 'A Shower', 'Water', 'A Phone Call', 'A Ride', 4);
   new Questions('action', 'In They Live, Nada is here to, "Kick Ass and _____?"', 'Take Names', 'Take a Break', 'Right Wrongs', 'Chew Bubblegum', 4);
