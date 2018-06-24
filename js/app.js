@@ -174,3 +174,13 @@ answers.addEventListener('click', pickAnswer);
 //comments.addEventListener('enter', sendComments);
 
 //TODO20 find a way to keep the user from clicking on the answers more than once to rack up points
+
+
+// function to create local storage
+function addLocalStorageOfUserScore(totalPoints) {
+  var localStorageData = JSON.stringify(totalPoints);
+  localStorage.setItem('totalPoints', localStorageData);
+  localStorage.getItem('totalPoints', localStorageData);
+  JSON.parse(localStorageData);
+}
+addLocalStorageOfUserScore();
