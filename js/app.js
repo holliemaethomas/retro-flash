@@ -146,6 +146,7 @@ function pickAnswer(event) {
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
+    answers.removeEventListener('click', pickAnswer);
     totalPoints += 50;
     console.log(totalPoints);
     // var correctAns = document.getElementById('question');
