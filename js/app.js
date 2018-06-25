@@ -155,12 +155,8 @@ function pickAnswer(event) {
     // var correctAns = document.getElementById('question');
     // correctAns.textContent = 'CORRECT!';
     // document.getElementById('answers').hidden = true;
-    
-    
   } else {
-    
     // answers.removeEventListener('click', pickAnswer);
-  
     //TODO18 Need incorrect indication for user
   }
   checkTen();

@@ -97,12 +97,13 @@ h1 {
   font-size: 30px;
   text-transform: uppercase;
   letter-spacing: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 #categories {
-  margin: 0 auto; 
-  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 930px;
 }
 
 #question {
@@ -139,13 +140,13 @@ h1 {
 
 #populate-question {
   width: 700px;
-  border-style: solid;
-  border-width: thin;
-  border-color: #b9dae3;
+  border-style: dotted;
+  border-width: 7px;
+  border-color: #f958f7;
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 
@@ -157,13 +158,26 @@ h1 {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
   text-align: center;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: .2px;
   margin-bottom: 45px;
-  width: 400px;
+  width: 500px;
   line-height: 20px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.buttons {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.buttons img {
+  width: 150px;
+  float: left;
 }
 
 
