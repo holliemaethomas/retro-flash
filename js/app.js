@@ -159,21 +159,17 @@ function pickAnswer(event) {
     totalPoints += 50;
     localStorage.setItem('totalPoints', totalPoints);
     console.log(totalPoints, target);
-    alert('CORRECT');
-    randomQuestion();
-    // var correctAns = document.getElementById('question');
-    // correctAns.textContent = 'CORRECT!';
-    // document.getElementById('answers').hidden = true;
-
-
-  } else {
-
-    // answers.removeEventListener('click', pickAnswer);
-
-    //TODO18 Need incorrect indication for user
-  }
+    var correctAns = document.getElementById('question');
+    correctAns.textContent = 'CORRECT! Pick another one!';
+    categories.addEventListener('click', pickCategory);
+  } if ('ans' + newQuestion.correctAns !== target) {
+    var wrongAns = document.getElementById('question');
+    wrongAns.textContent = 'Wrong! try again';
+  }  
   checkTen();
 }
+// function to return populate-question element
+
 
 //Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
@@ -228,6 +224,8 @@ addLocalStorageOfUserScore();*/
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
 //comments.addEventListener('enter', sendComments);
+
+
 
 
 
