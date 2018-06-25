@@ -103,6 +103,15 @@ function populate() {
   new Questions('cult', 'David Lynch\'s Blue Velvet contains subtle references to which historical figure\'s assassination?', 'John F. Kennedy', 'Abraham Lincoln', 'Archduke Franz Ferdinand', 'Martin Luther King Jr.', 2);
   new Questions('cult', 'In the original script of Bill & Ted\'s Excellent Adventure, the time machine was a _____?', 'Treadmill', 'Van', 'Closet', 'Hot Tub', 2);
   new Questions('cult', 'Which movie on IMDB is rated out of 11 instead of 10?', 'Ghostbusters', 'RoboCop', 'Scarface', 'This is Spinal Tap', 4);
+  new Questions('chevy', 'How many National Lampoon\'s Vacation movies came out in the 80s?', 1, 2, 3, 4, 3);
+  new Questions('chevy', 'The Griswald family win a trip to Europe on what game show?', 'The Price Is Right', 'You Bet Your Life', 'Pig In A Poke', 'Wacky Wally World', 3);
+  new Questions('chevy', 'In National Lampoon\'s European Vacation, what Monty Python actor do the Griswalds litterally keep running into?', 'Eric Idle', 'John Cleese', 'Terry Gilliam', 'Terry Jones', 1);
+  new Questions('chevy', 'Which "Cheers" actor was in the movie Fletch with Chevy Chase', 'Woody Harrelson', 'Kelsey Grammer', 'George Wendt', 'Ted Danson', 3);
+  new Questions('cult', 'Who did not star in the 1982 classic, Fast Times at Ridgemont High?', 'Sean Penn', 'Forest Whitaker', 'Kevin Kline', 'Nicolas Cage', 3);
+  new Questions('chevy', 'What 1980 movie did Chevy Chase turn down a leading role in?', 'Airplane', 'American Gigolo', 'Stir Crazy', 'Private Benjamin', 2);
+  new Questions('chevy', 'What country was Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
+  new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
+  new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The couch Trip', 'Running Scared', 'Modern Problems', 1);
 }
 populate();
 
@@ -155,12 +164,12 @@ function pickAnswer(event) {
     // var correctAns = document.getElementById('question');
     // correctAns.textContent = 'CORRECT!';
     // document.getElementById('answers').hidden = true;
-    
-    
+
+
   } else {
-    
+
     // answers.removeEventListener('click', pickAnswer);
-  
+
     //TODO18 Need incorrect indication for user
   }
   checkTen();
