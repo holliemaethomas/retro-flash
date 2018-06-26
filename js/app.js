@@ -114,6 +114,7 @@ function populate() {
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The couch Trip', 'Running Scared', 'Modern Problems', 1);
 }
 populate();
+document.getElementById('populate-question').hidden = true;
 
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
@@ -138,6 +139,7 @@ function noRepeats(question){
 
 //Function that sends the questions to the form on the game screen
 function sendQuestion() {
+  document.getElementById('populate-question').hidden = false;
   question;
   question.textContent = newQuestion.question;
   ans1;
