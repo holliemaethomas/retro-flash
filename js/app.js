@@ -157,9 +157,6 @@ function pickAnswer(event) {
   if('ans' + newQuestion.correctAns === target) {
     // answers.removeEventListener('click', pickAnswer);
     totalPoints += 50;
-<<<<<<< HEAD
-    console.log(totalPoints);
-=======
     localStorage.setItem('totalPoints', totalPoints);
     console.log(totalPoints, target);
     alert('CORRECT');
@@ -167,7 +164,6 @@ function pickAnswer(event) {
     // var correctAns = document.getElementById('question');
     // correctAns.textContent = 'CORRECT!';
     // document.getElementById('answers').hidden = true;
->>>>>>> a29ef1b40320946211c7b9422a72a56e6c1def50
 
 
   } else {
