@@ -122,7 +122,6 @@ function randomQuestion() {
   noRepeats(newQuestion);
   sendQuestion();
   alreadyShown.push(newQuestion);
-  
 
 }
 
@@ -168,12 +167,12 @@ function pickAnswer(event) {
     correctAns.textContent = 'You have chosen wisely! you now have ' + totalPoints + ' points total' + ' Pick another one!';
     categories.addEventListener('click', pickCategory);
     document.getElementById('answers').hidden = true;
-    
+
   } if ('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     var wrongAns = document.getElementById('question');
     wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
-  }   
+  }
   checkTen();
 }
 
@@ -217,7 +216,7 @@ function pickCategory(event) {
     chosenCategory = chevyQuestions;
   }
   randomQuestion();
-  
+
 }
 
 /*Function to create local storage

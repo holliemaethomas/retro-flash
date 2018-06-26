@@ -5,8 +5,9 @@ This project is an 80's movie trivia game that consists of 6 catagories: Action,
 
 **Problem Domain**
 - One problem that we had at first was that our vision was too big. So we had to dial it back.
-- The next issue was that we had was that if we were going to movie trivia or other forms of culture in the 80's. We voted on the direction that we wanted to go.
--   
+- The next issue was that we had was that if we were going to movie trivia or other forms of culture in the 80's. We voted on the direction that we are going now.
+- Another issue was trying to get the questions to populate properly.
+- Also another issue was trying to get the questions to disappear after the user picked the right answer.  
 **Project Before and After**
 - At the start we just had ideas and a wireframe. Then came narrowing down whether we wanted to do movie trivia or 80's culture throughout the entire 80's.
 - We finally chose to do movie trivia.
