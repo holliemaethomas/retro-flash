@@ -112,6 +112,7 @@ function populate() {
   new Questions('chevy', 'What country was Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The couch Trip', 'Running Scared', 'Modern Problems', 1);
+  new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
 }
 populate();
 document.getElementById('populate-question').hidden = true;
@@ -177,14 +178,28 @@ function pickAnswer(event) {
 //Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
   if (questionsTotal === 9) {
-    document.getElementById('question').hidden = true;
-    document.getElementById('answers').hidden = true;
     document.getElementById('categories').hidden = true;
-    //Need to insert the function for the Leader board
+    leaderBoard();
   } else {
     questionsTotal++;
     console.log(questionsTotal);
   }
+}
+
+function leaderBoard() {
+  var ans5 = document.getElementById('ans5');
+  var message = document.getElementById('message');
+  ans5.textContent = '';
+  var leaders = ['Star', 'Fighter', 'Enduran', 'Lance', 'Guest'];
+  var topScores = [ 340, 310, 290, 280, 250];
+  message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  document.getElementById('answers').hidden = false;
+  question.textContent = 'LEADERBOARD';
+  ans1.textContent = '1.   ' + leaders[0] + '   ' + topScores[0];
+  ans2.textContent = '2.   ' + leaders[1] + '   ' + topScores[1];
+  ans3.textContent = '3.   ' + leaders[2] + '   ' + topScores[2];
+  ans4.textContent = '4.   ' + leaders[3] + '   ' + topScores[3];
+  ans5.textContent = '5.   ' + leaders[4] + '   ' + topScores[4];
 }
 
 //Function that runs when a player chooses a category
@@ -212,7 +227,6 @@ function pickCategory(event) {
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
-//comments.addEventListener('enter', sendComments);
 
 
 
