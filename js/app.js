@@ -152,7 +152,6 @@ function sendQuestion() {
 }
 
 //Function that checks for the correct answer and adds the points
-var hideMe = document.getElementById('answers');
 function pickAnswer(event) {
   event.preventDefault();
   target = event.target.id;
@@ -164,14 +163,21 @@ function pickAnswer(event) {
     localStorage.setItem('totalPoints', totalPoints);
     console.log(totalPoints, target);
     var correctAns = document.getElementById('question');
-    correctAns.textContent = 'You have chosen wisely! you now have ' + totalPoints + ' points total' + ' Pick another one!';
+    correctAns.textContent = 'You have chosen wisely! You now have ' + totalPoints + ' points.' + ' Pick another question.';
     categories.addEventListener('click', pickCategory);
     document.getElementById('answers').hidden = true;
+
 
   } if ('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     var wrongAns = document.getElementById('question');
     wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
+
+  } if ('ans' + newQuestion.correctAns !== target) {
+    totalPoints += -10;
+    var wrongAns = document.getElementById('question');
+    wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+
   }
   checkTen();
 }
@@ -189,12 +195,6 @@ function checkTen() {
     console.log(questionsTotal);
   }
 }
-
-//Function to check if the user is a new or returning player
-/*if(!localStorage.userName) {
-  console.log('new user');
-  formSubmit();
-}*/
 
 //Function that runs when a player chooses a category
 function pickCategory(event) {
@@ -219,14 +219,7 @@ function pickCategory(event) {
 
 }
 
-/*Function to create local storage
-function addLocalStorageOfUserScore(totalPoints) {
-  var localStorageData = JSON.stringify(totalPoints);
-  localStorage.setItem('totalPoints', localStorageData);
-  localStorage.getItem('totalPoints', localStorageData);
-  JSON.parse(localStorageData);
 }
-addLocalStorageOfUserScore();*/
 
 //Event listeners
 categories.addEventListener('click', pickCategory);
