@@ -122,6 +122,7 @@ function randomQuestion() {
   noRepeats(newQuestion);
   sendQuestion();
   alreadyShown.push(newQuestion);
+
 }
 
 function noRepeats(question){
@@ -165,10 +166,18 @@ function pickAnswer(event) {
     correctAns.textContent = 'You have chosen wisely! You now have ' + totalPoints + ' points.' + ' Pick another question.';
     categories.addEventListener('click', pickCategory);
     document.getElementById('answers').hidden = true;
+
+
+  } if ('ans' + newQuestion.correctAns !== target) {
+    totalPoints += -10;
+    var wrongAns = document.getElementById('question');
+    wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
+
   } if ('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     var wrongAns = document.getElementById('question');
     wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+
   }
   checkTen();
 }
@@ -207,6 +216,9 @@ function pickCategory(event) {
     chosenCategory = chevyQuestions;
   }
   randomQuestion();
+
+}
+
 }
 
 //Event listeners
