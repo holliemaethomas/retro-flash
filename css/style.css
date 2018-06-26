@@ -103,6 +103,7 @@ h1 {
 #categories {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
   width: 930px;
 }
 
@@ -178,6 +179,10 @@ h1 {
 .buttons img {
   width: 150px;
   float: left;
+}
+
+#cult:hover {
+  opacity: .8;
 }
 
 

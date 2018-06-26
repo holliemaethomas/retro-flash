@@ -105,6 +105,7 @@ function populate() {
   new Questions('cult', 'Which movie on IMDB is rated out of 11 instead of 10?', 'Ghostbusters', 'RoboCop', 'Scarface', 'This is Spinal Tap', 4);
 }
 populate();
+document.getElementById('populate-question').hidden = true;
 
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
@@ -127,6 +128,7 @@ function noRepeats(question){
 
 //Function that sends the questions to the form on the game screen
 function sendQuestion() {
+  document.getElementById('populate-question').hidden = false;
   question;
   question.textContent = newQuestion.question;
   ans1;
