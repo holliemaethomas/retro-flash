@@ -121,6 +121,8 @@ function randomQuestion() {
   noRepeats(newQuestion);
   sendQuestion();
   alreadyShown.push(newQuestion);
+  
+
 }
 
 function noRepeats(question){
@@ -149,26 +151,29 @@ function sendQuestion() {
 }
 
 //Function that checks for the correct answer and adds the points
+var hideMe = document.getElementById('answers');
 function pickAnswer(event) {
   event.preventDefault();
   target = event.target.id;
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
-    // answers.removeEventListener('click', pickAnswer);
+    answers.removeEventListener('click', pickAnswer);
     totalPoints += 50;
     localStorage.setItem('totalPoints', totalPoints);
     console.log(totalPoints, target);
     var correctAns = document.getElementById('question');
-    correctAns.textContent = 'CORRECT! Pick another one!';
+    correctAns.textContent = 'You have chosen wisely! you now have ' + totalPoints + ' points total' + ' Pick another one!';
     categories.addEventListener('click', pickCategory);
+    document.getElementById('answers').hidden = true;
+    
   } if ('ans' + newQuestion.correctAns !== target) {
+    totalPoints += -10;
     var wrongAns = document.getElementById('question');
-    wrongAns.textContent = 'Wrong! try again';
-  }  
+    wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
+  }   
   checkTen();
 }
-// function to return populate-question element
 
 
 //Function that runs when the user has answered ten questions, display scoreboard
@@ -193,6 +198,7 @@ function checkTen() {
 //Function that runs when a player chooses a category
 function pickCategory(event) {
   event.preventDefault();
+  document.getElementById('answers').hidden = false;
   answers.addEventListener('click', pickAnswer);
   target = event.target.id;
   if(target === 'cult') {
@@ -209,6 +215,7 @@ function pickCategory(event) {
     chosenCategory = chevyQuestions;
   }
   randomQuestion();
+  
 }
 
 /*Function to create local storage
