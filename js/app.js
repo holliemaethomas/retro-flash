@@ -127,6 +127,8 @@ function populate() {
   new Questions ('cult', 'In ending number one of Clue, who killed the cook?', 'Miss Scarlet','The Butler', 'Yvette', 'Proffessor Plum', 3);
   new Questions ('chevy', 'What unwanted gift did Clark receive as his bonus during National Lampoons Christmas Vacation?', 'A yearly subscription to Time magazine', 'A yearly subscription to a jelly of the month club', 'A really nice card', 'A designer set of towels', 2);
   new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
+  new Questions('chevy', 'What is Chevy Chases real name?', 'Christopher', 'Cornelius', 'Cameron', 'Colton', 2);
+  new Questions('horror', 'How many sequels were made to the original Evil Dead', '1', '2', '3', '4', 2);
 
 }
 populate();
