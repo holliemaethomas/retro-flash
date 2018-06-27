@@ -115,6 +115,13 @@ function populate() {
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The Couch Trip', 'Running Scared', 'Modern Problems', 1);
   new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
+  new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for HighLander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
+  new Questions('cult', 'In Real Genius, What does Proffessor Hathaway hate the smell of?', 'coffee', 'dirty sneakers','popcorn', 'hairspray', 3);
+  new Questions('magic', 'Who composed the film score for Beetlejuice', 'john williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
+  new Questions('action', 'What type of bird call was used to create the Predators click noises', 'Wood Pecker', 'Crow', 'Blue Jay', 'cockatoo', 2);
+  new Questions ('action', 'In Big Trouble Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
+  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017')
+
 }
 populate();
 document.getElementById('populate-question').hidden = true;
