@@ -118,8 +118,12 @@ function populate() {
   new Questions('magic', 'Who composed the film score for Beetlejuice', 'john williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
   new Questions('action', 'What type of bird call was used to create the Predators click noises', 'Wood Pecker', 'Crow', 'Blue Jay', 'cockatoo', 2);
   new Questions ('action', 'In Big Trouble Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
-  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017')
-
+  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017', 4);
+  new Questions('action', 'In Die Hard, what special gift does Riggs give Murtaughs at the end of the movie?', 'A special forces patch from his Army uniform', 'An unfired Bullet', 'The bullet he was shot with during the movie', 'A zippo lighter he recieved from his deceased wife', 2);
+  new Questions ('cult', 'Complete this famous line from Mad Max, Road Warrior: A fella, a quick fella, might have a weapon under there it would be a shame if I had to..', 'take off his hand', 'serve him to the Snake', 'pin his head to the panel', 'slit his throat', 3);
+  new Questions ('magic', 'What is the name of Honeythorn Gumps fairy friend that accompanies them on their adventure in Legend?', 'Oona', 'Lilly', 'Asteria','Elvina', 1);
+  new Questions ('cult', 'In ending number one of Clue, who killed the cook?', 'Miss Scarlet','The Butler', 'Yvette', 'Proffessor Plum', 3);
+  new Questions ('chevy', 'What unwanted gift did Clark receive as his bonus during National Lampoons Christmas Vacation?', 'A yearly subscription to Time magazine', 'A yearly subscription to a jelly of the month club', 'A really nice card', 'A designer set of towels', 2);
 }
 populate();
 document.getElementById('populate-question').hidden = true;
