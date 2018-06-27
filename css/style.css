@@ -108,6 +108,7 @@ h1 {
   width: 930px;
 }
 
+
 #question {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -204,31 +205,52 @@ fieldset {
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 14px;
   padding-right: 10px;
   text-align: center;
+  margin-top: 25px;
+  margin-bottom: 8px;
 }
 
 .input {
   display: block;
   font-family: 'Source Sans Pro', sans-serif;
   margin-top: 4px;
-  margin-bottom: 8px;
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#nameInput {
+  width: 200px;
+}
+
+#emailInput {
+  width: 200px;
+}
+
+#commentInput {
+  width: 200px;
+  height: 100px;
 }
 
 .submit {
   background-color: #f958f7;
   color: #fafafa;
   font-weight: 400;
-  font-size: 16px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
   padding: 7px 9px 7px 9px;
+  border: none;
+  margin-right: 10px;
 }
 
-#submit-buttons {
-  display: inline-block;
+.submit:last-child {
+  margin-right: 0px;
+}
+
+.submit:hover {
+  background-color: #5cb8d3;
 }
 
 
