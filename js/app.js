@@ -233,7 +233,7 @@ function leaderBoard() {
   var message = document.getElementById('message');
   var ans5 = document.getElementById('ans5');
   ans5.textContent = '';
-  message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  message.textContent = 'Congratulations ' + localStorage.userName + ', you scored ' + totalPoints + ' points!';
   document.getElementById('answers').hidden = false;
   question.textContent = 'LEADERBOARD';
   ans1.textContent = '1.   ' + leaders[0] + '   ' + scores[0];
