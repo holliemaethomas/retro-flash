@@ -86,6 +86,13 @@ nav ul li:last-child {
   margin-bottom: 80px;
 }
 
+#homeParagraph {
+  margin-top: 150px;
+  font-size: 24px;
+  color: #b9dae3;
+  text-align: center;
+}
+
 h1 {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -99,6 +106,16 @@ h1 {
 
 /* GAME QUESTIONS */
 
+
+#message {
+  color: #b9dae3;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 30px;
+}
 
 #message {
   color: #b9dae3;
