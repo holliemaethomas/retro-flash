@@ -13,6 +13,7 @@ var chevyQuestions = [];
 var chosenCategory = [];
 var newQuestion = [];
 var alreadyShown = [];
+var message = document.getElementById('message');
 var question = document.getElementById('question');
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
@@ -154,6 +155,8 @@ function noRepeats(question){
 //Function that sends the questions to the form on the game screen
 function sendQuestion() {
   document.getElementById('populate-question').hidden = false;
+  message;
+  message.textContent = '';
   question;
   question.textContent = newQuestion.question;
   ans1;
@@ -170,6 +173,8 @@ function sendQuestion() {
 function pickAnswer(event) {
   event.preventDefault();
   target = event.target.id;
+  message;
+  message.textContent = '';
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
@@ -185,10 +190,10 @@ function pickAnswer(event) {
   } if('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     if(totalPoints <= -50) {
-      var wrongAns = document.getElementById('question');
+      var wrongAns = document.getElementById('message');
       wrongAns.textContent = 'Wrong! You have lost 10 points. Wouldn\'t you prefer a nice game of chess?';
     } else {
-      wrongAns = document.getElementById('question');
+      wrongAns = document.getElementById('message');
       wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
     }    
   }
@@ -239,7 +244,7 @@ function checkScore() {
 }
 
 function leaderBoard() {
-  var message = document.getElementById('message');
+  message = document.getElementById('message');
   var ans5 = document.getElementById('ans5');
   ans5.textContent = '';
   message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
@@ -279,6 +284,8 @@ function pickCategory(event) {
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
+
+
 
 
 
