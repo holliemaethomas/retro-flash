@@ -151,7 +151,6 @@ h1 {
   margin-bottom: 60px;
 }
 
-
 #populate-question ul li {
   margin-bottom: 10px;
 }
@@ -187,7 +186,7 @@ h1 {
 }
 
 fieldset {
-  width: 300px;
+  width: 400px;
   padding: 30px;
   text-align: center;
   margin-left: auto;
@@ -195,14 +194,41 @@ fieldset {
   margin-bottom: 50px;
 }
 
-legend {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-
 #emailForm {
   color: #b9dae3;
   font-weight: 300;
+}
+
+.title {
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.input {
+  display: block;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.submit {
+  background-color: #f958f7;
+  color: #fafafa;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  padding: 7px 9px 7px 9px;
+}
+
+#submit-buttons {
+  display: inline-block;
 }
 
 
