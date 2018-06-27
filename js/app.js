@@ -206,7 +206,7 @@ function leaderBoard() {
   var ans5 = document.getElementById('ans5');
   var message = document.getElementById('message');
   ans5.textContent = '';
-  var leaders = ['Star', 'Fighter', 'Enduran', 'Lance', 'Guest'];
+  var leaders = ['Alex Rogan', 'David Lightman', 'John Connor', '', 'Guest'];
   var topScores = [ 340, 310, 290, 280, 250];
   message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
   document.getElementById('answers').hidden = false;
