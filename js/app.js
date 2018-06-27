@@ -107,19 +107,19 @@ function populate() {
   new Questions('cult', 'Which movie on IMDB is rated out of 11 instead of 10?', 'Ghostbusters', 'RoboCop', 'Scarface', 'This is Spinal Tap', 4);
   new Questions('chevy', 'How many National Lampoon\'s Vacation movies came out in the 80s?', 1, 2, 3, 4, 3);
   new Questions('chevy', 'The Griswald family win a trip to Europe on what game show?', 'The Price Is Right', 'You Bet Your Life', 'Pig In A Poke', 'Wacky Wally World', 3);
-  new Questions('chevy', 'In National Lampoon\'s European Vacation, what Monty Python actor do the Griswalds litterally keep running into?', 'Eric Idle', 'John Cleese', 'Terry Gilliam', 'Terry Jones', 1);
-  new Questions('chevy', 'Which "Cheers" actor was in the movie Fletch with Chevy Chase', 'Woody Harrelson', 'Kelsey Grammer', 'George Wendt', 'Ted Danson', 3);
+  new Questions('chevy', 'In National Lampoon\'s European Vacation, what Monty Python actor do the Griswalds literally keep running into?', 'Eric Idle', 'John Cleese', 'Terry Gilliam', 'Terry Jones', 1);
+  new Questions('chevy', 'Which Cheers actor was in the movie Fletch with Chevy Chase?', 'Woody Harrelson', 'Kelsey Grammer', 'George Wendt', 'Ted Danson', 3);
   new Questions('cult', 'Who did not star in the 1982 classic, Fast Times at Ridgemont High?', 'Sean Penn', 'Forest Whitaker', 'Kevin Kline', 'Nicolas Cage', 3);
   new Questions('chevy', 'What 1980 movie did Chevy Chase turn down a leading role in?', 'Airplane', 'American Gigolo', 'Stir Crazy', 'Private Benjamin', 2);
-  new Questions('chevy', 'What country was Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
+  new Questions('chevy', 'What country were Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The Couch Trip', 'Running Scared', 'Modern Problems', 1);
-  new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
-  new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for HighLander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
-  new Questions('cult', 'In Real Genius, What does Proffessor Hathaway hate the smell of?', 'coffee', 'dirty sneakers','popcorn', 'hairspray', 3);
-  new Questions('magic', 'Who composed the film score for Beetlejuice', 'john williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
-  new Questions('action', 'What type of bird call was used to create the Predators click noises', 'Wood Pecker', 'Crow', 'Blue Jay', 'cockatoo', 2);
-  new Questions ('action', 'In Big Trouble Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
+  new Questions('action', 'Which popular wrestler starred in the movie They Live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
+  new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for Highlander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
+  new Questions('cult', 'In Real Genius, what does Professor Hathaway hate the smell of?', 'Coffee', 'Dirty Sneakers','Popcorn', 'Hairspray', 3);
+  new Questions('magic', 'Who composed the film score for Beetlejuice?', 'John Williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 3);
+  new Questions('action', 'What type of bird call was used to create the Predator\'s click noises?', 'Woodpecker', 'Crow', 'Blue Jay', 'Cockatoo', 2);
+  new Questions ('action', 'In Big Trouble in Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
   new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
 }
 populate();
