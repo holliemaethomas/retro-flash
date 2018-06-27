@@ -125,6 +125,7 @@ function randomQuestion() {
   noRepeats(newQuestion);
   sendQuestion();
   alreadyShown.push(newQuestion);
+
 }
 
 function noRepeats(question){
@@ -166,14 +167,16 @@ function pickAnswer(event) {
     correctAns.textContent = 'You have chosen wisely! You now have ' + totalPoints + ' points.' + ' Pick another question.';
     categories.addEventListener('click', pickCategory);
     document.getElementById('answers').hidden = true;
+    
     if(questionsTotal === 0) {
       localStorage.setItem('totalPoints', 0);
     }
+
   } if ('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     var wrongAns = document.getElementById('question');
-    wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
-  }
+    wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
+
   localStorage.setItem('totalPoints', totalPoints);
   console.log(totalPoints, target);
   checkTen();
@@ -192,6 +195,7 @@ function checkTen() {
     console.log(questionsTotal);
   }
 }
+
 
 function checkStorage() {
   if(localStorage.leaders) {
@@ -234,6 +238,22 @@ function leaderBoard() {
   ans3.textContent = '3.   ' + leaders[2] + '   ' + scores[2];
   ans4.textContent = '4.   ' + leaders[3] + '   ' + scores[3];
   ans5.textContent = '5.   ' + leaders[4] + '   ' + scores[4];
+
+function leaderBoard() {
+  var ans5 = document.getElementById('ans5');
+  var message = document.getElementById('message');
+  ans5.textContent = '';
+  var leaders = ['Star', 'Fighter', 'Enduran', 'Lance', 'Guest'];
+  var topScores = [ 340, 310, 290, 280, 250];
+  message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  document.getElementById('answers').hidden = false;
+  question.textContent = 'LEADERBOARD';
+  ans1.textContent = '1.   ' + leaders[0] + '   ' + topScores[0];
+  ans2.textContent = '2.   ' + leaders[1] + '   ' + topScores[1];
+  ans3.textContent = '3.   ' + leaders[2] + '   ' + topScores[2];
+  ans4.textContent = '4.   ' + leaders[3] + '   ' + topScores[3];
+  ans5.textContent = '5.   ' + leaders[4] + '   ' + topScores[4];
+
 }
 
 //Function that runs when a player chooses a category
@@ -257,13 +277,14 @@ function pickCategory(event) {
   }
   console.log(chosenCategory);
   randomQuestion();
+
+}
+
 }
 
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
-
-
 
 
 
