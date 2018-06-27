@@ -108,6 +108,16 @@ h1 {
   width: 930px;
 }
 
+#message {
+  color: #b9dae3;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  margin-bottom: 30px;
+}
+
 #question {
   color: #b9dae3;
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -204,5 +214,3 @@ legend {
   color: #b9dae3;
   font-weight: 300;
 }
-
-
