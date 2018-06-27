@@ -69,7 +69,7 @@ function populate() {
   new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____."', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
   new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
   new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune?', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
-  new Questions('horror', 'Which is NOT a movie directed by John Carpenter?', 'The Fog', 'Halloween II', 'The Thing', 'Prince of Darkness', 2);
+  new Questions('horror', 'Which is not a movie directed by John Carpenter?', 'The Fog', 'Halloween II', 'The Thing', 'Prince of Darkness', 2);
   new Questions('scifi', 'Whose work did NOT influence Blade Runner?', 'Philip K. Dick', 'Dan O\'Bannon', 'Jean Giraud', 'Arthur C. Clarke', 4);
   new Questions('magic', 'What god does Conan the Barbarian worship?', 'Odin', 'Kull', 'Crom', 'Bhaal', 3);
   new Questions('magic', 'What was the first DVD sent out on Netflix in 1998?', 'Beetlejuice', 'The Dark Crystal', 'The NeverEnding Story', 'Gremlins', 1);
@@ -81,7 +81,7 @@ function populate() {
   new Questions('action', 'In Escape from New York, what is the only thing that Snake asks for when escaping?', 'A Shower', 'Water', 'A Phone Call', 'A Ride', 4);
   new Questions('action', 'In They Live, Nada is here to, "Kick Ass and _____?"', 'Take Names', 'Take a Break', 'Right Wrongs', 'Chew Bubblegum', 4);
   new Questions('action', 'In Highlander, the main villain - the Kurgan - says "it\'s better to _____."', 'be alone', 'burn the candle at both ends', 'burn out than to fade away', 'be feared than loved', 3);
-  new Questions('horror', 'In Halloween, what were the teens watching on tv before Michael Myers arrives?', 'War of the Worlds', 'Frankenstein', 'Dracula', 'The Thing from Another World', 4);
+  new Questions('horror', 'Although Jamie Lee Curtis has top billing in Halloween II, she only appears for _____ minutes in the film.', '23', '28', '31', '25', 4);
   new Questions('horror', 'In The Lost Boys, what was the name of the main love interest?', 'Star', 'Peony', 'Soleil', 'Moonflower', 1);
   new Questions('horror', 'In Pet Sematary, what was the name of the evil cat that comes back to life?', 'Josie', 'Kitty', 'Churches', 'Maxy', 3);
   new Questions('scifi', 'In The Thing, what computer game did R.J. MacReady play while sitting in his cabin?', 'Tetris', 'Chess', 'Pong', 'Solitaire', 2);
@@ -121,6 +121,8 @@ function populate() {
   new Questions('action', 'What type of bird call was used to create the Predator\'s click noises?', 'Woodpecker', 'Crow', 'Blue Jay', 'Cockatoo', 2);
   new Questions ('action', 'In Big Trouble in Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
   new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
+  new Questions('horror', 'Which movie crew paid zombie extras more if they agreed to eat real calf brains while filming?', 'Nightmare City', 'The Return of the Livig Dead', 'Day of the Dead', 'Night of the Creeps', 2);
+  new Questions();
 }
 populate();
 document.getElementById('populate-question').hidden = true;
