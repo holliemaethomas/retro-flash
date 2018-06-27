@@ -20,6 +20,8 @@ var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
 var categories = document.getElementById('categories');
 var answers = document.getElementById('answers');
+var leaders = ['Star', 'Fighter', 'Enduran', 'Lance', 'Guest'];
+var scores = [ 340, 310, 290, 280, 250];
 console.log(cultQuestions);
 console.log(actionQuestions);
 console.log(scifiQuestions);
@@ -111,7 +113,7 @@ function populate() {
   new Questions('chevy', 'What 1980 movie did Chevy Chase turn down a leading role in?', 'Airplane', 'American Gigolo', 'Stir Crazy', 'Private Benjamin', 2);
   new Questions('chevy', 'What country was Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
-  new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The couch Trip', 'Running Scared', 'Modern Problems', 1);
+  new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The Couch Trip', 'Running Scared', 'Modern Problems', 1);
   new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
 }
 populate();
@@ -161,39 +163,81 @@ function pickAnswer(event) {
   if('ans' + newQuestion.correctAns === target) {
     answers.removeEventListener('click', pickAnswer);
     totalPoints += 50;
-    localStorage.setItem('totalPoints', totalPoints);
-    console.log(totalPoints, target);
     var correctAns = document.getElementById('question');
     correctAns.textContent = 'You have chosen wisely! You now have ' + totalPoints + ' points.' + ' Pick another question.';
     categories.addEventListener('click', pickCategory);
     document.getElementById('answers').hidden = true;
-
+    
+    if(questionsTotal === 0) {
+      localStorage.setItem('totalPoints', 0);
+    }
 
   } if ('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
     var wrongAns = document.getElementById('question');
     wrongAns.textContent = 'Wrong! you have lost 10 points, choose wisely';
 
-  } if ('ans' + newQuestion.correctAns !== target) {
-    totalPoints += -10;
-    var wrongAns = document.getElementById('question');
-    wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
-
-  }
+  localStorage.setItem('totalPoints', totalPoints);
+  console.log(totalPoints, target);
   checkTen();
 }
 
 
 //Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
-  if (questionsTotal === 9) {
+  questionsTotal++;
+  if (questionsTotal === 10) {
     document.getElementById('categories').hidden = true;
+    checkStorage();
+    checkScore();
     leaderBoard();
   } else {
-    questionsTotal++;
     console.log(questionsTotal);
   }
 }
+
+
+function checkStorage() {
+  if(localStorage.leaders) {
+    var getLeaders = localStorage.getItem('leaders');
+    leaders = JSON.parse(getLeaders);
+    var getScores = localStorage.getItem('scores');
+    scores = JSON.parse(getScores);
+  }
+}
+
+function checkScore() {
+  var tempPoints = Number(localStorage.totalPoints);
+  var tempUser = localStorage.userName;
+  leaders;
+  for(var i = 0; i < scores.length; i++) {
+    if(tempPoints >= scores[i]) {
+      var tempScore = scores[i];
+      scores[i] = tempPoints;
+      tempPoints = tempScore;
+      var tempLeader = leaders[i];
+      leaders[i] = tempUser;
+      tempUser = tempLeader;
+    }
+  }
+  var setLeader = JSON.stringify(leaders);
+  localStorage.setItem('leaders', setLeader);
+  var setScores = JSON.stringify(scores);
+  localStorage.setItem('scores', setScores);
+}
+
+function leaderBoard() {
+  var message = document.getElementById('message');
+  var ans5 = document.getElementById('ans5');
+  ans5.textContent = '';
+  message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  document.getElementById('answers').hidden = false;
+  question.textContent = 'LEADERBOARD';
+  ans1.textContent = '1.   ' + leaders[0] + '   ' + scores[0];
+  ans2.textContent = '2.   ' + leaders[1] + '   ' + scores[1];
+  ans3.textContent = '3.   ' + leaders[2] + '   ' + scores[2];
+  ans4.textContent = '4.   ' + leaders[3] + '   ' + scores[3];
+  ans5.textContent = '5.   ' + leaders[4] + '   ' + scores[4];
 
 function leaderBoard() {
   var ans5 = document.getElementById('ans5');
@@ -209,6 +253,7 @@ function leaderBoard() {
   ans3.textContent = '3.   ' + leaders[2] + '   ' + topScores[2];
   ans4.textContent = '4.   ' + leaders[3] + '   ' + topScores[3];
   ans5.textContent = '5.   ' + leaders[4] + '   ' + topScores[4];
+
 }
 
 //Function that runs when a player chooses a category
@@ -230,6 +275,7 @@ function pickCategory(event) {
   } else {
     chosenCategory = chevyQuestions;
   }
+  console.log(chosenCategory);
   randomQuestion();
 
 }
@@ -239,6 +285,7 @@ function pickCategory(event) {
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
+
 
 
 
