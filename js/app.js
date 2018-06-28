@@ -13,6 +13,7 @@ var chevyQuestions = [];
 var chosenCategory = [];
 var newQuestion = [];
 var alreadyShown = [];
+var message = document.getElementById('message');
 var question = document.getElementById('question');
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
@@ -126,10 +127,8 @@ function populate() {
   new Questions ('magic', 'What is the name of Honeythorn Gumps fairy friend that accompanies them on their adventure in Legend?', 'Oona', 'Lilly', 'Asteria','Elvina', 1);
   new Questions ('cult', 'In ending number one of Clue, who killed the cook?', 'Miss Scarlet','The Butler', 'Yvette', 'Proffessor Plum', 3);
   new Questions ('chevy', 'What unwanted gift did Clark receive as his bonus during National Lampoons Christmas Vacation?', 'A yearly subscription to Time magazine', 'A yearly subscription to a jelly of the month club', 'A really nice card', 'A designer set of towels', 2);
-  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
   new Questions('chevy', 'What is Chevy Chases real name?', 'Christopher', 'Cornelius', 'Cameron', 'Colton', 2);
   new Questions('horror', 'How many sequels were made to the original Evil Dead', '1', '2', '3', '4', 2);
-
 }
 populate();
 document.getElementById('populate-question').hidden = true;
@@ -156,6 +155,8 @@ function noRepeats(question){
 //Function that sends the questions to the form on the game screen
 function sendQuestion() {
   document.getElementById('populate-question').hidden = false;
+  message;
+  message.textContent = '';
   question;
   question.textContent = newQuestion.question;
   ans1;
@@ -172,6 +173,8 @@ function sendQuestion() {
 function pickAnswer(event) {
   event.preventDefault();
   target = event.target.id;
+  message;
+  message.textContent = '';
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
@@ -184,10 +187,15 @@ function pickAnswer(event) {
     if(questionsTotal === 0) {
       localStorage.setItem('totalPoints', 0);
     }
-  } if ('ans' + newQuestion.correctAns !== target) {
+  } if('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
-    var wrongAns = document.getElementById('question');
-    wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+    if(totalPoints <= -50) {
+      var wrongAns = document.getElementById('message');
+      wrongAns.textContent = 'Wrong! You have lost 10 points. Wouldn\'t you prefer a nice game of chess?';
+    } else {
+      wrongAns = document.getElementById('message');
+      wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+    }    
   }
   localStorage.setItem('totalPoints', totalPoints);
   console.log(totalPoints, target);
@@ -197,14 +205,13 @@ function pickAnswer(event) {
 //Function that runs when the user has answered ten questions, display scoreboard
 function checkTen() {
   questionsTotal++;
+  console.log(questionsTotal);
   if (questionsTotal === 10) {
     document.getElementById('categories').hidden = true;
     checkStorage();
     checkScore();
     leaderBoard();
-  } else {
-    console.log(questionsTotal);
-  }
+  } 
 }
 
 function checkStorage() {
@@ -237,7 +244,7 @@ function checkScore() {
 }
 
 function leaderBoard() {
-  var message = document.getElementById('message');
+  message = document.getElementById('message');
   var ans5 = document.getElementById('ans5');
   ans5.textContent = '';
 
@@ -282,6 +289,8 @@ function pickCategory(event) {
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
+
+
 
 
 
