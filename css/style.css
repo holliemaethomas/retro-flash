@@ -372,12 +372,15 @@ nav.people {
 }
 
 h3.names {
+  font-family: 'Barlow Semi Condensed', sans-serif;
   height: 30px;
-  font-size: 22px;
-  padding: 3px;
-  margin: 3px;
+  font-size: 28px;
+  margin-bottom: 7px;
 }
 
 p.biosText {
-  font-size: 18px;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 23px;
 }
