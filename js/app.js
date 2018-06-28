@@ -4,7 +4,6 @@
 var target = 0;
 var totalPoints = 0;
 var questionsTotal = 0;
-var timer = 0;
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -22,7 +21,7 @@ var ans3 = document.getElementById('ans3');
 var ans4 = document.getElementById('ans4');
 var categories = document.getElementById('categories');
 var answers = document.getElementById('answers');
-var leaders = ['Star', 'Fighter', 'Enduran', 'Lance', 'Guest'];
+var leaders = ['Alex Rogan', 'David Lightman', 'Chevy Chase', 'Han Solo', 'Marty McFly'];
 var scores = [ 340, 310, 290, 280, 250];
 console.log(cultQuestions);
 console.log(actionQuestions);
@@ -140,20 +139,11 @@ function randomQuestion() {
   newQuestion = chosenCategory[randomNumber];
   noRepeats(newQuestion);
   sendQuestion();
-  timer = setTimeout('outOfTime()', 30000);
   alreadyShown.push(newQuestion);
 }
 
-//Runs if the user runs out of time
-function outOfTime() {
-  totalPoints += -10;
-  var outOfTime = document.getElementById('message');
-  outOfTime.textContent = 'You ran out of time, You have lost 10 points.';
-  localStorage.setItem('totalPoints', totalPoints);
-  checkTen();
-}
 
-//Checks to make sure the random question hasn't already been asked
+//Function to make sure the random question hasn't already been asked
 function noRepeats(question){
   for (var i = 0; i < alreadyShown.length; i++){
     if (question !== alreadyShown[i]){
@@ -185,7 +175,6 @@ function sendQuestion() {
 //Function that checks for the correct answer and adds the points
 function pickAnswer(event) {
   event.preventDefault();
-  clearTimeout(outOfTime);
   target = event.target.id;
   message;
   message.textContent = '';
@@ -281,7 +270,6 @@ function leaderBoard() {
 
 //Runs at the end of the game to clear values for the next game
 function clearData() {
-  clearTimeout(outOfTime);
   totalPoints = 0;
 }
 
@@ -308,10 +296,11 @@ function pickCategory(event) {
   randomQuestion();
 }
 
-
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
+
+
 
 
 
