@@ -1,19 +1,17 @@
 # Retro Flash
-#### _Holly Thomas,_ _Ashley Breunich,_ _Ed Puzino,_ _Wyatt Wedell_
+#### _Hollie Thomas,_ _Ashley Breunich,_ _Ed Puzino
 **Brief Description of Project**
-This project is an 80's movie trivia game that consists of 6 catagories: Action, Horror, Cult, Chevy Chase, Scifi, and Movie Magic.
+This project is an 80's movie trivia game that consists of 6 catagories: Action, Horror, Cult, Chevy Chase, Scifi, and Movie Magic. This project demonstrates the authors current abilities with CSS, JavaScript, and HTML elements.
 
 **Problem Domain**
-- One problem that we had at first was that our vision was too big. So we had to dial it back.
-- The next issue was that we had was that if we were going to movie trivia or other forms of culture in the 80's. We voted on the direction that we are going now.
-- Another issue was trying to get the questions to populate properly.
-- Also another issue was trying to get the questions to disappear after the user picked the right answer.  
-**Project Before and After**
-- At the start we just had ideas and a wireframe. Then came narrowing down whether we wanted to do movie trivia or 80's culture throughout the entire 80's.
-- We finally chose to do movie trivia.
-- Which led to us coming up with the 6 catagories that we chose.
-- Then the each of us took on writing each of the HTML pages.
-- After those were established we started writing basic Javascript then when that functionality came together then we all started working on different taks.
-- Which would allow us to get the different aspects of our game working instead of just waiting for each task to be completed. 
-- We had to communicate with each other about who should do a PR first so we didn't run into merge conflicts.
-- Once all of these tasks which took us through the week. We got together and discussed and also tried to come up with better ideas for some of the concepts or try to figure out how to fix an issue.
+The purposed purpose of this project is to create a website where users can answer trivia questions, track their score, and submit questions for other users. We identified that there was a need for a fun, creative, and free website. Our website solves the problems of; having something to do on a lunch break, showing off your prowess in 80s movie trivia, boredom while waiting for public tranportation/food/children to find their shoes, and most importantly a place to nerd out with other nerds by creating a nerd community online.  
+**Resources**
+- This page was written in Visual Studio Code (Version 1.19.1) and can be viewed from any browser.
+- Questions and answers were fact checked via [www.IMDB.com]
+
+***SPECIAL THANKS TO THE FOLLOWING QUESTION CONTRIBUTORS***
+- GABRIELLA STWART
+- BARBARA LOPEZ
+- DAYLITE RAMSEY
+- ANDREW THOMAS
+- JAMES SCOTT
