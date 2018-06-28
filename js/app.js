@@ -4,6 +4,7 @@
 var target = 0;
 var totalPoints = 0;
 var questionsTotal = 0;
+var timer = 0;
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -13,6 +14,7 @@ var chevyQuestions = [];
 var chosenCategory = [];
 var newQuestion = [];
 var alreadyShown = [];
+var message = document.getElementById('message');
 var question = document.getElementById('question');
 var ans1 = document.getElementById('ans1');
 var ans2 = document.getElementById('ans2');
@@ -114,27 +116,45 @@ function populate() {
   new Questions('chevy', 'What country were Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The Couch Trip', 'Running Scared', 'Modern Problems', 1);
-  new Questions('action', 'Which popular wrestler starred in the movie They Live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
-  new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for Highlander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
-  new Questions('cult', 'In Real Genius, what does Professor Hathaway hate the smell of?', 'Coffee', 'Dirty Sneakers','Popcorn', 'Hairspray', 3);
-  new Questions('magic', 'Who composed the film score for Beetlejuice?', 'John Williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 3);
-  new Questions('action', 'What type of bird call was used to create the Predator\'s click noises?', 'Woodpecker', 'Crow', 'Blue Jay', 'Cockatoo', 2);
-  new Questions ('action', 'In Big Trouble in Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
-  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
-  new Questions('horror', 'Which movie crew paid zombie extras more if they agreed to eat real calf brains while filming?', 'Nightmare City', 'The Return of the Living Dead', 'Day of the Dead', 'Night of the Creeps', 2);
-  new Questions();
+  new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
+  new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for HighLander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
+  new Questions('cult', 'In Real Genius, What does Proffessor Hathaway hate the smell of?', 'coffee', 'dirty sneakers','popcorn', 'hairspray', 3);
+  new Questions('magic', 'Who composed the film score for Beetlejuice', 'John Williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
+  new Questions('action', 'What type of bird call was used to create the Predators click noises', 'Wood Pecker', 'Crow', 'Blue Jay', 'cockatoo', 2);
+  new Questions ('action', 'In Big Trouble Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
+  new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017', 4);
+  new Questions('action', 'In Die Hard, what special gift does Riggs give Murtaughs at the end of the movie?', 'A special forces patch from his Army uniform', 'An unfired Bullet', 'The bullet he was shot with during the movie', 'A zippo lighter he recieved from his deceased wife', 2);
+  new Questions ('cult', 'Complete this famous line from Mad Max, Road Warrior: A fella, a quick fella, might have a weapon under there it would be a shame if I had to..', 'take off his hand', 'serve him to the Snake', 'pin his head to the panel', 'slit his throat', 3);
+  new Questions ('magic', 'What is the name of Honeythorn Gumps fairy friend that accompanies them on their adventure in Legend?', 'Oona', 'Lilly', 'Asteria','Elvina', 1);
+  new Questions ('cult', 'In ending number one of Clue, who killed the cook?', 'Miss Scarlet','The Butler', 'Yvette', 'Proffessor Plum', 3);
+  new Questions ('chevy', 'What unwanted gift did Clark receive as his bonus during National Lampoons Christmas Vacation?', 'A yearly subscription to Time magazine', 'A yearly subscription to a jelly of the month club', 'A really nice card', 'A designer set of towels', 2);
+  new Questions('chevy', 'What is Chevy Chases real name?', 'Christopher', 'Cornelius', 'Cameron', 'Colton', 2);
+  new Questions('horror', 'How many sequels were made to the original Evil Dead', '1', '2', '3', '4', 2);
+
 }
 populate();
 document.getElementById('populate-question').hidden = true;
 
+//Picks the ramdom question from the category selected
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
   noRepeats(newQuestion);
   sendQuestion();
+  timer = setTimeout('outOfTime()', 30000);
   alreadyShown.push(newQuestion);
 }
 
+//Runs if the user runs out of time
+function outOfTime() {
+  totalPoints += -10;
+  var outOfTime = document.getElementById('message');
+  outOfTime.textContent = 'You ran out of time, You have lost 10 points.';
+  localStorage.setItem('totalPoints', totalPoints);
+  checkTen();
+}
+
+//Checks to make sure the random question hasn't already been asked
 function noRepeats(question){
   for (var i = 0; i < alreadyShown.length; i++){
     if (question !== alreadyShown[i]){
@@ -149,6 +169,8 @@ function noRepeats(question){
 //Function that sends the questions to the form on the game screen
 function sendQuestion() {
   document.getElementById('populate-question').hidden = false;
+  message;
+  message.textContent = '';
   question;
   question.textContent = newQuestion.question;
   ans1;
@@ -164,7 +186,10 @@ function sendQuestion() {
 //Function that checks for the correct answer and adds the points
 function pickAnswer(event) {
   event.preventDefault();
+  clearTimeout(outOfTime);
   target = event.target.id;
+  message;
+  message.textContent = '';
   console.log(target);
   console.log(newQuestion.correctAns);
   if('ans' + newQuestion.correctAns === target) {
@@ -177,29 +202,34 @@ function pickAnswer(event) {
     if(questionsTotal === 0) {
       localStorage.setItem('totalPoints', 0);
     }
-  } if ('ans' + newQuestion.correctAns !== target) {
+  } if('ans' + newQuestion.correctAns !== target) {
     totalPoints += -10;
-    var wrongAns = document.getElementById('question');
-    wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+    if(totalPoints <= -50) {
+      var wrongAns = document.getElementById('message');
+      wrongAns.textContent = 'Wrong! You have lost 10 points. Wouldn\'t you prefer a nice game of chess?';
+    } else {
+      wrongAns = document.getElementById('message');
+      wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
+    }
   }
   localStorage.setItem('totalPoints', totalPoints);
   console.log(totalPoints, target);
   checkTen();
 }
 
-//Function that runs when the user has answered ten questions, display scoreboard
+//Functions that runs when the user has answered ten questions
 function checkTen() {
   questionsTotal++;
+  console.log(questionsTotal);
   if (questionsTotal === 10) {
     document.getElementById('categories').hidden = true;
     checkStorage();
     checkScore();
     leaderBoard();
-  } else {
-    console.log(questionsTotal);
   }
 }
 
+//Function to check for previous leaderboard and if so retrieve it
 function checkStorage() {
   if(localStorage.leaders) {
     var getLeaders = localStorage.getItem('leaders');
@@ -209,6 +239,7 @@ function checkStorage() {
   }
 }
 
+//checks the score and adds it to the leaderboard if it's high enough
 function checkScore() {
   var tempPoints = Number(localStorage.totalPoints);
   var tempUser = localStorage.userName;
@@ -229,11 +260,16 @@ function checkScore() {
   localStorage.setItem('scores', setScores);
 }
 
+//Display the leaderboard
 function leaderBoard() {
-  var message = document.getElementById('message');
+  message = document.getElementById('message');
   var ans5 = document.getElementById('ans5');
   ans5.textContent = '';
-  message.textContent = 'Congratulations ' + localStorage.userName + ', you scored ' + totalPoints + ' points!';
+  if(totalPoints < 50) {
+    message.textContent = 'Alrighty Then ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  } else {
+    message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  }
   document.getElementById('answers').hidden = false;
   question.textContent = 'LEADERBOARD';
   ans1.textContent = '1.   ' + leaders[0] + '   ' + scores[0];
@@ -241,6 +277,13 @@ function leaderBoard() {
   ans3.textContent = '3.   ' + leaders[2] + '   ' + scores[2];
   ans4.textContent = '4.   ' + leaders[3] + '   ' + scores[3];
   ans5.textContent = '5.   ' + leaders[4] + '   ' + scores[4];
+  clearData();
+}
+
+//Runs at the end of the game to clear values for the next game
+function clearData() {
+  clearTimeout(outOfTime);
+  totalPoints = 0;
 }
 
 //Function that runs when a player chooses a category
@@ -270,6 +313,8 @@ function pickCategory(event) {
 //Event listeners
 categories.addEventListener('click', pickCategory);
 answers.addEventListener('click', pickAnswer);
+
+
 
 
 
