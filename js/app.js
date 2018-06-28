@@ -121,7 +121,7 @@ function populate() {
   new Questions('action', 'What type of bird call was used to create the Predator\'s click noises?', 'Woodpecker', 'Crow', 'Blue Jay', 'Cockatoo', 2);
   new Questions ('action', 'In Big Trouble in Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
   new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017');
-  new Questions('horror', 'Which movie crew paid zombie extras more if they agreed to eat real calf brains while filming?', 'Nightmare City', 'The Return of the Livig Dead', 'Day of the Dead', 'Night of the Creeps', 2);
+  new Questions('horror', 'Which movie crew paid zombie extras more if they agreed to eat real calf brains while filming?', 'Nightmare City', 'The Return of the Living Dead', 'Day of the Dead', 'Night of the Creeps', 2);
   new Questions();
 }
 populate();
