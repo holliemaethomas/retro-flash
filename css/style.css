@@ -11,8 +11,8 @@ body {
 #login {
   width: 320px;
   height: 420px;
-  background: rgba(107, 7, 85, 0.4);
-  color: #fff;
+  background: rgba(247, 68, 245, .95);
+  color: #fafafa;
   top: 50%;
   left: 50%;
   position: absolute;
@@ -22,29 +22,90 @@ body {
 }
 
 #loginHeader {
-  margin: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin-bottom: 40px;
   padding: 0, 0, 20px;
   text-align: center;
   font-size: 30px;
-  color: rgb(209, 14, 14);
+  color:  #fafafa;
 }
+
+#login p {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
 
 #homeParagraph {
+  font-family: 'Barlow Semi Condensed', sans-serif;
   margin-top: 150px;
-  font-size: 20px;
+  font-size: 24px;
   color: #b9dae3;
   text-align: center;
+  line-height: 28px;
+  font-weight: 300;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
-#login-box p {
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-}
-
-#login-box input {
-  width: 100%;
+#homeParagraph h2 {
+  font-weight: 400;
+  font-size: 28px;
   margin-bottom: 20px;
+}
+
+#homeParagraph p {
+  margin-bottom: 50px;
+}
+
+#playGame {
+  display: block;
+  background: transparent;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  font-weight: 400;
+  font-size: 22px;
+  padding: 12px 15px 12px 15px;
+  margin-right: auto;
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#playGame:hover {
+  background: #f958f7;
+  color: #fafafa;
+  border: 1px solid #f958f7;
+}
+
+#username {
+  display: block;
+  width: 70%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#submit {
+  display: block;
+  background:  transparent;
+  border:  2px solid #fafafa;
+  color: #fafafa;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  padding: 7px 9px 7px 9px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#submit:hover {
+  background: #fafafa;
+  color: #f958f7;
 }
 
 /* MAIN ELEMENTS */
