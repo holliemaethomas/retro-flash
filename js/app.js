@@ -71,7 +71,7 @@ function populate() {
   new Questions('magic', 'Jim Hensen\'s The Dark Crystal takes place in "another world, another time, in the age of _____."', 'surprise', 'wonder', 'magic', 'uncertainty', 2);
   new Questions('scifi', 'The main street set in Back to the Future is also the main street in what other 80s movie?', 'RoboCop', 'Repo Man', 'Gremlins', 'E.T. the Extra-Terrestrial', 3);
   new Questions('scifi', 'What is the single most valuable commodity in David Lynch\'s Dune?', 'Melange', 'Coffee', 'Salt', 'Plutonium', 1);
-  new Questions('horror', 'Which is NOT a movie directed by John Carpenter?', 'The Fog', 'Halloween II', 'The Thing', 'Prince of Darkness', 2);
+  new Questions('horror', 'Which is not a movie directed by John Carpenter?', 'The Fog', 'Halloween II', 'The Thing', 'Prince of Darkness', 2);
   new Questions('scifi', 'Whose work did NOT influence Blade Runner?', 'Philip K. Dick', 'Dan O\'Bannon', 'Jean Giraud', 'Arthur C. Clarke', 4);
   new Questions('magic', 'What god does Conan the Barbarian worship?', 'Odin', 'Kull', 'Crom', 'Bhaal', 3);
   new Questions('magic', 'What was the first DVD sent out on Netflix in 1998?', 'Beetlejuice', 'The Dark Crystal', 'The NeverEnding Story', 'Gremlins', 1);
@@ -83,7 +83,7 @@ function populate() {
   new Questions('action', 'In Escape from New York, what is the only thing that Snake asks for when escaping?', 'A Shower', 'Water', 'A Phone Call', 'A Ride', 4);
   new Questions('action', 'In They Live, Nada is here to, "Kick Ass and _____?"', 'Take Names', 'Take a Break', 'Right Wrongs', 'Chew Bubblegum', 4);
   new Questions('action', 'In Highlander, the main villain - the Kurgan - says "it\'s better to _____."', 'be alone', 'burn the candle at both ends', 'burn out than to fade away', 'be feared than loved', 3);
-  new Questions('horror', 'In Halloween, what were the teens watching on tv before Michael Myers arrives?', 'War of the Worlds', 'Frankenstein', 'Dracula', 'The Thing from Another World', 4);
+  new Questions('horror', 'Although Jamie Lee Curtis has top billing in Halloween II, she only appears for _____ minutes in the film.', '23', '28', '31', '25', 4);
   new Questions('horror', 'In The Lost Boys, what was the name of the main love interest?', 'Star', 'Peony', 'Soleil', 'Moonflower', 1);
   new Questions('horror', 'In Pet Sematary, what was the name of the evil cat that comes back to life?', 'Josie', 'Kitty', 'Churches', 'Maxy', 3);
   new Questions('scifi', 'In The Thing, what computer game did R.J. MacReady play while sitting in his cabin?', 'Tetris', 'Chess', 'Pong', 'Solitaire', 2);
@@ -109,11 +109,11 @@ function populate() {
   new Questions('cult', 'Which movie on IMDB is rated out of 11 instead of 10?', 'Ghostbusters', 'RoboCop', 'Scarface', 'This is Spinal Tap', 4);
   new Questions('chevy', 'How many National Lampoon\'s Vacation movies came out in the 80s?', 1, 2, 3, 4, 3);
   new Questions('chevy', 'The Griswald family win a trip to Europe on what game show?', 'The Price Is Right', 'You Bet Your Life', 'Pig In A Poke', 'Wacky Wally World', 3);
-  new Questions('chevy', 'In National Lampoon\'s European Vacation, what Monty Python actor do the Griswalds litterally keep running into?', 'Eric Idle', 'John Cleese', 'Terry Gilliam', 'Terry Jones', 1);
-  new Questions('chevy', 'Which "Cheers" actor was in the movie Fletch with Chevy Chase', 'Woody Harrelson', 'Kelsey Grammer', 'George Wendt', 'Ted Danson', 3);
+  new Questions('chevy', 'In National Lampoon\'s European Vacation, what Monty Python actor do the Griswalds literally keep running into?', 'Eric Idle', 'John Cleese', 'Terry Gilliam', 'Terry Jones', 1);
+  new Questions('chevy', 'Which Cheers actor was in the movie Fletch with Chevy Chase?', 'Woody Harrelson', 'Kelsey Grammer', 'George Wendt', 'Ted Danson', 3);
   new Questions('cult', 'Who did not star in the 1982 classic, Fast Times at Ridgemont High?', 'Sean Penn', 'Forest Whitaker', 'Kevin Kline', 'Nicolas Cage', 3);
   new Questions('chevy', 'What 1980 movie did Chevy Chase turn down a leading role in?', 'Airplane', 'American Gigolo', 'Stir Crazy', 'Private Benjamin', 2);
-  new Questions('chevy', 'What country was Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
+  new Questions('chevy', 'What country were Emmett Fitz-Hume and Austin Millbarge sent to in Spies Like Us?', 'Saudi Arabia', 'Iran', 'Pakistan', 'Afghanistan', 3);
   new Questions('cult', 'In Scarface, Tony Montana came to America from which country?', 'Columbia', 'Puerto Rico', 'Italy', 'Cuba', 4);
   new Questions('chevy', 'What movie did Chevy Chase star in with Gregory Hines?', 'Deal Of The Century', 'The Couch Trip', 'Running Scared', 'Modern Problems', 1);
   new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
@@ -130,6 +130,7 @@ function populate() {
   new Questions ('chevy', 'What unwanted gift did Clark receive as his bonus during National Lampoons Christmas Vacation?', 'A yearly subscription to Time magazine', 'A yearly subscription to a jelly of the month club', 'A really nice card', 'A designer set of towels', 2);
   new Questions('chevy', 'What is Chevy Chases real name?', 'Christopher', 'Cornelius', 'Cameron', 'Colton', 2);
   new Questions('horror', 'How many sequels were made to the original Evil Dead', '1', '2', '3', '4', 2);
+
 }
 populate();
 document.getElementById('populate-question').hidden = true;
