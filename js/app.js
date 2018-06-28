@@ -4,6 +4,7 @@
 var target = 0;
 var totalPoints = 0;
 var questionsTotal = 0;
+var timer = 0;
 var cultQuestions = [];
 var actionQuestions = [];
 var scifiQuestions = [];
@@ -118,7 +119,7 @@ function populate() {
   new Questions('action', 'Which popular wrestler starred in the movie they live?', 'Hulk Hogan', 'Andre The Giant', '"Rowdy" Roddy Piper', 'Jimmy "Superfly" Snuka', 3);
   new Questions('magic', 'What quintessential 80s rockband performed the soundtrack for HighLander?','Survivor', 'Rush', 'Journey', 'Queen', 4);
   new Questions('cult', 'In Real Genius, What does Proffessor Hathaway hate the smell of?', 'coffee', 'dirty sneakers','popcorn', 'hairspray', 3);
-  new Questions('magic', 'Who composed the film score for Beetlejuice', 'john williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
+  new Questions('magic', 'Who composed the film score for Beetlejuice', 'John Williams', 'Hans Zimmer', 'Danny Elfman', 'Harold Faltimimer', 'James Horner', 3);
   new Questions('action', 'What type of bird call was used to create the Predators click noises', 'Wood Pecker', 'Crow', 'Blue Jay', 'cockatoo', 2);
   new Questions ('action', 'In Big Trouble Little China, what must the sorceror do to retrieve his physical form?', 'Marry a green eyed girl', 'Sacrifice a pure woman', 'Bring back an ancestor from the dead', 'Kill a dragon', 1);
   new Questions('action', 'What future date does The Running Man take place in?', '2020', '2001', '2033', '2017', 4);
@@ -133,14 +134,26 @@ function populate() {
 populate();
 document.getElementById('populate-question').hidden = true;
 
+//Picks the ramdom question from the category selected
 function randomQuestion() {
   var randomNumber = Math.floor(Math.random() * chosenCategory.length);
   newQuestion = chosenCategory[randomNumber];
   noRepeats(newQuestion);
   sendQuestion();
+  timer = setTimeout('outOfTime()', 30000);
   alreadyShown.push(newQuestion);
 }
 
+//Runs if the user runs out of time
+function outOfTime() {
+  totalPoints += -10;
+  var outOfTime = document.getElementById('message');
+  outOfTime.textContent = 'You ran out of time, You have lost 10 points.';
+  localStorage.setItem('totalPoints', totalPoints);
+  checkTen();
+}
+
+//Checks to make sure the random question hasn't already been asked
 function noRepeats(question){
   for (var i = 0; i < alreadyShown.length; i++){
     if (question !== alreadyShown[i]){
@@ -172,6 +185,7 @@ function sendQuestion() {
 //Function that checks for the correct answer and adds the points
 function pickAnswer(event) {
   event.preventDefault();
+  clearTimeout(outOfTime);
   target = event.target.id;
   message;
   message.textContent = '';
@@ -195,14 +209,14 @@ function pickAnswer(event) {
     } else {
       wrongAns = document.getElementById('message');
       wrongAns.textContent = 'Wrong! You have lost 10 points. Try again or pick a new question.';
-    }    
+    }
   }
   localStorage.setItem('totalPoints', totalPoints);
   console.log(totalPoints, target);
   checkTen();
 }
 
-//Function that runs when the user has answered ten questions, display scoreboard
+//Functions that runs when the user has answered ten questions
 function checkTen() {
   questionsTotal++;
   console.log(questionsTotal);
@@ -211,9 +225,10 @@ function checkTen() {
     checkStorage();
     checkScore();
     leaderBoard();
-  } 
+  }
 }
 
+//Function to check for previous leaderboard and if so retrieve it
 function checkStorage() {
   if(localStorage.leaders) {
     var getLeaders = localStorage.getItem('leaders');
@@ -223,6 +238,7 @@ function checkStorage() {
   }
 }
 
+//checks the score and adds it to the leaderboard if it's high enough
 function checkScore() {
   var tempPoints = Number(localStorage.totalPoints);
   var tempUser = localStorage.userName;
@@ -243,16 +259,16 @@ function checkScore() {
   localStorage.setItem('scores', setScores);
 }
 
+//Display the leaderboard
 function leaderBoard() {
   message = document.getElementById('message');
   var ans5 = document.getElementById('ans5');
   ans5.textContent = '';
-
-  var leaders = ['Alex Rogan', 'David Lightman', 'John Connor', '', 'Guest'];
-  var topScores = [ 340, 310, 290, 280, 250];
-
-
-  message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  if(totalPoints < 50) {
+    message.textContent = 'Alrighty Then ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  } else {
+    message.textContent = 'Congratulations ' + localStorage.userName + ' you scored ' + totalPoints + ' points';
+  }
   document.getElementById('answers').hidden = false;
   question.textContent = 'LEADERBOARD';
   ans1.textContent = '1.   ' + leaders[0] + '   ' + scores[0];
@@ -260,6 +276,13 @@ function leaderBoard() {
   ans3.textContent = '3.   ' + leaders[2] + '   ' + scores[2];
   ans4.textContent = '4.   ' + leaders[3] + '   ' + scores[3];
   ans5.textContent = '5.   ' + leaders[4] + '   ' + scores[4];
+  clearData();
+}
+
+//Runs at the end of the game to clear values for the next game
+function clearData() {
+  clearTimeout(outOfTime);
+  totalPoints = 0;
 }
 
 //Function that runs when a player chooses a category
