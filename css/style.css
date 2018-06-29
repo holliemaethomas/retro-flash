@@ -338,8 +338,8 @@ fieldset {
 
 section.bios {
 width: 1200px;
-margin-left: 250px;
-margin-right: 250px;  
+margin-left: auto;
+margin-right: auto;  
 margin-top: 50px;
 }
 
@@ -348,7 +348,7 @@ div.group {
   float: left;
 }
 
-nav.people {
+.people {
   width: 320px;
   text-align: left;
   padding-right: 80px;
@@ -370,41 +370,3 @@ p.biosText {
   font-weight: 300;
   line-height: 26px;
 }
-
-/* section.bios {
-  margin-top: 50px;
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-div.group {
-  padding: 5px;
-  margin: 10px auto 20px auto;
-}
-
-img.heads {
-  float: left;
-}
-
-nav.people {
-  float: left;
-  text-align: left;
-  padding: 5px;
-  margin: 50px auto 0px 20px;
-  color: #fafafa;
-}
-
-h3.names {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  height: 30px;
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-p.biosText {
-  font-family: 'Barlow Semi Condensed', sans-serif;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 25px;
-} */
