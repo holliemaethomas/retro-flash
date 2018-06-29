@@ -1,18 +1,12 @@
-
 'use strict';
-function formSubmit(){
+
+function addUserName() {
   var userName = document.getElementById('username').value;
+  localStorage.setItem('userName', userName);
   console.log(userName);
-  addLocalStorageOfUserName(userName);
   var remove = document.getElementById('login');
   remove.parentNode.removeChild(remove);
 }
 
-function addLocalStorageOfUserName(user) {
-  //var localStorageData = JSON.stringify(user);
-  localStorage.setItem('userName', user);/*
-  localStorage.getItem('userName', localStorageData);
-  JSON.parse(localStorageData);*/
-}
-
-// move to app.js
+var submit = document.getElementById('submit');
+submit.addEventListener('click', addUserName);
